@@ -40,3 +40,13 @@
 >> コメント部
 - コメント主の匿名の名前を入力
 - IPアドレス、コメント、名前、コメントの日時をデータベースに保存
+
+>database
+
+|column   |type     |length|other       |require
+|---------|---------|------|------------|--------
+|id       |int      |      |primary key | true
+|title    |varchar  |    64|            | true
+|genre    |varchar  |    32|            | true
+|filename |varchar  |    32|            | true
+|timestamp|timestamp|      |            | true
