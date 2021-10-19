@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplemde@latest/dist/simplemde.min.css">
     <script src="https://cdn.jsdelivr.net/npm/simplemde@latest/dist/simplemde.min.js"></script>
     <title>技術ブログ投稿画面</title>
@@ -31,6 +33,16 @@
         </label>
 
         <textarea id="mde"></textarea>
+
+        <div class="btn">
+            <div class="back-btn">
+                <a href="./list.php" onclick="history.back()">戻る</a>
+            </div>
+            <div class="post-btn">
+                <input type="submit" value="投稿">
+            </div>
+        </div>
+
     </form>
 
     <script>

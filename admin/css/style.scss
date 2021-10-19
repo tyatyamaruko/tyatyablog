@@ -1,0 +1,40 @@
+form {
+    width: 80%;
+    margin: 200px auto 0;
+    label {
+        display: flex;
+        margin: 30px;
+        p {
+            flex: 1;
+            font-size: 1.5rem;
+        }
+        input {
+            flex: 2;
+            font-size: 1.5rem;
+        }
+        select {
+            flex: 2;
+            font-size: 1.5rem;
+        }
+    }
+
+}
+
+.btn {
+    display: flex;
+    justify-content: space-between;
+
+    .back-btn {
+        a {
+            font-size: 1.5rem;
+        }
+    }
+
+    .post-btn {
+        input {
+            font-size: 1.5rem;
+            padding: 10px 30px;
+            
+        }
+    }
+}
