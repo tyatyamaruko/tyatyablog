@@ -2,6 +2,11 @@ form {
   width: 80%;
   margin: 200px auto 0;
 }
+form .err {
+  color: red;
+  text-align: right;
+  margin-right: 30px;
+}
 form label {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -19,6 +24,7 @@ form label input {
       -ms-flex: 2;
           flex: 2;
   font-size: 1.5rem;
+  padding: 5px;
 }
 form label select {
   -webkit-box-flex: 2;

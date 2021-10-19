@@ -1,6 +1,12 @@
 form {
     width: 80%;
     margin: 200px auto 0;
+
+    .err {
+        color: red;
+        text-align: right;
+        margin-right: 30px;
+    }
     label {
         display: flex;
         margin: 30px;
@@ -11,6 +17,7 @@ form {
         input {
             flex: 2;
             font-size: 1.5rem;
+            padding: 5px;
         }
         select {
             flex: 2;

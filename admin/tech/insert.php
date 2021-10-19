@@ -1,3 +1,11 @@
+<?php
+session_start();
+session_regenerate_id(true);
+
+$errors = $_SESSION['error'];
+$_SESSION["error"] = array();
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -14,10 +22,12 @@
 
 <body>
     <form action="insert_check.php" method="post">
+        <p class="err"><?= $errors["title"] ?></p>
         <label for="title">
             <p>タイトル(64文字まで)</p>
             <input type="text" name="title" id="title">
         </label>
+        <p class="err"><?= $errors["genre"] ?></p>
         <label for="genre">
             <p>ジャンル</p>
             <select name="genre" id="genre">
