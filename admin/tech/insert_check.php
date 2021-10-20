@@ -1,5 +1,9 @@
 <?php
 
+use cebe\markdown\MarkdownExtra;
+require_once "../../vendor/autoload.php";
+
+
 session_start();
 session_regenerate_id(true);
 
@@ -26,6 +30,15 @@ if (isset($post['genre']) && $post['genre'] != "") {
     $errors['genre'] = "ジャンルが入力されていません";
 }
 
+if (isset($post['markdown']) && $post['markdown'] != "") {
+    $markdown = $post['markdown'];
+} else {
+    $errors['markdown'] = "記事が入力されていません";
+}
+
+$converter = new MarkdownExtra();
+echo $converter -> parse($markdown);
+
 
 if (count($errors) > 0) {
     header("Location: insert.php");
@@ -33,6 +46,7 @@ if (count($errors) > 0) {
     exit();
 }
 
+echo "";
 // データベースに保存
 // mdをファイルに書き込んで保存
 // 成功したらリストにリダイレクト

@@ -42,7 +42,7 @@ $_SESSION["error"] = array();
             </select>
         </label>
 
-        <textarea id="mde"></textarea>
+        <textarea name="markdown" id="mde"></textarea>
 
         <div class="btn">
             <div class="back-btn">
