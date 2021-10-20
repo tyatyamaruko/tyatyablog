@@ -1,6 +1,7 @@
 <?php
 
 use cebe\markdown\MarkdownExtra;
+
 require_once "../../vendor/autoload.php";
 
 
@@ -37,7 +38,7 @@ if (isset($post['markdown']) && $post['markdown'] != "") {
 }
 
 $converter = new MarkdownExtra();
-echo $converter -> parse($markdown);
+echo $converter->parse($markdown);
 
 
 if (count($errors) > 0) {
@@ -46,7 +47,34 @@ if (count($errors) > 0) {
     exit();
 }
 
-echo "";
+$dsn = "mysql:dbname=tyatyablog;host=localhost;charset=utf8mb4";
+$username = "root";
+$password = "";
+
+try {
+    $pdo = new PDO($dsn, $username, $password);
+
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+    $sql = "insert into techarticles (title, genre, filename) values (?,?,?)";
+
+    $stmt = $pdo -> prepare($sql);
+    $data[] = $title;
+    $data[] = $genre;
+    $data[] = $title."-".$genre."md";
+    $stmt -> execute($data);
+
+} catch (PDOException $e) { 
+    // エラーが発生した場合は「500 Internal Server Error」でテキストとして表示して終了する
+    // - もし手抜きしたくない場合は普通にHTMLの表示を継続する
+    // - ここではエラー内容を表示しているが， 実際の商用環境ではログファイルに記録して， Webブラウザには出さないほうが望ましい
+    header('Content-Type: text/plain; charset=UTF-8', true, 500);
+    exit($e->getMessage());
+}
+
+
+
 // データベースに保存
 // mdをファイルに書き込んで保存
 // 成功したらリストにリダイレクト

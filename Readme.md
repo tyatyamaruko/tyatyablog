@@ -48,5 +48,5 @@
 |id       |int      |      |primary key | true
 |title    |varchar  |    64|            | true
 |genre    |varchar  |    32|            | true
-|filename |varchar  |    32|            | true
+|filename |varchar  |   128|            | true
 |timestamp|timestamp|      |            | true
