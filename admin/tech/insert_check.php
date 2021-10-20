@@ -3,6 +3,7 @@
 use cebe\markdown\MarkdownExtra;
 
 require_once "../../vendor/autoload.php";
+require_once "../env.php";
 
 
 session_start();
@@ -47,17 +48,15 @@ if (count($errors) > 0) {
     exit();
 }
 
-$dsn = "mysql:dbname=tyatyablog;host=localhost;charset=utf8mb4";
-$username = "root";
-$password = "";
+$dsn = "mysql:dbname={$DBNAME};host=localhost;charset=utf8mb4";
 
 try {
-    $pdo = new PDO($dsn, $username, $password);
+    $pdo = new PDO($dsn, $USERNAME, $PASSWORD);
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    $sql = "insert into techarticles (title, genre, filename) values (?,?,?)";
+    $sql = "insert into {$TECH_TABLE} (title, genre, filename) values (?,?,?)";
 
     $stmt = $pdo -> prepare($sql);
     $data[] = $title;
