@@ -46,7 +46,7 @@ $_SESSION["error"] = array();
 
         <div class="btn">
             <div class="back-btn">
-                <a href="./list.php" onclick="history.back()">戻る</a>
+                <a href="./list.php">戻る</a>
             </div>
             <div class="post-btn">
                 <input type="submit" value="投稿">
