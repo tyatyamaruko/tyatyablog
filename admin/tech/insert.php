@@ -41,7 +41,7 @@ $_SESSION["error"] = array();
                 <option value="other">OTHER</option>
             </select>
         </label>
-
+        <p class="err"><?= $errors["markdown"] ?></p>
         <textarea name="markdown" id="mde"></textarea>
 
         <div class="btn">

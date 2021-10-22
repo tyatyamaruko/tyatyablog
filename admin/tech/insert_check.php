@@ -37,10 +37,6 @@ if (isset($post['markdown']) && $post['markdown'] != "") {
     $errors['markdown'] = "記事が入力されていません";
 }
 
-// $converter = new MarkdownExtra();
-// echo $converter->parse($markdown);
-
-
 if (count($errors) > 0) {
     header("Location: insert.php");
     $_SESSION["error"] = $errors;
@@ -59,13 +55,13 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    $sql = "insert into techarticles (title, genre, filename) values (?,?,?)";
+    $sql = "insert into techarticles (title, genre, markdown) values (?,?,?)";
 
     $stmt = $pdo -> prepare($sql);
     $data[] = $title;
     $data[] = $genre;
-    $data[] = $title."-".$genre.".md";
-    // $stmt -> execute($data);
+    $data[] = $markdown;
+    $stmt -> execute($data);
 
 } catch (PDOException $e) { 
     // エラーが発生した場合は「500 Internal Server Error」でテキストとして表示して終了する
@@ -75,8 +71,4 @@ try {
     exit($e->getMessage());
 }
 
-// mdをファイルに書き込んで保存
-//make file 
-// var_dump(file_put_contents("../../articles/tech/php/".$title-$genre."md", $markdown));
-// 成功したらリストにリダイレクト
-// 失敗したら...
+header("Location: ./list.php");

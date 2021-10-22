@@ -43,10 +43,10 @@
 
 >database
 
-|column   |type     |length|other       |require
-|---------|---------|------|------------|--------
-|id       |int      |      |primary key | true
-|title    |varchar  |    64|            | true
-|genre    |varchar  |    32|            | true
-|filename |varchar  |   128|            | true
-|timestamp|timestamp|      |            | true
+|column   |type      |length|other       |require
+|---------|----------|------|------------|--------
+|id       |int       |      |primary key | true
+|title    |varchar   |    64|            | true
+|genre    |varchar   |    32|            | true
+|markdown |mediumtext|      |            | true
+|timestamp|timestamp |      |            | true
