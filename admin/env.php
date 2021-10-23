@@ -7,5 +7,16 @@ define("PASSWORD", "");
 define("TECH_TABLE", "techarticles");
 define("DAILY_TABLE", "dailyarticles");
 
+$GENRES = [
+    "html",
+    "css",
+    "javascript",
+    "php",
+    "swift",
+    "ios",
+    "web",
+    "other",
+]
+
 
 ?>

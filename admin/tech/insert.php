@@ -31,14 +31,9 @@ $_SESSION["error"] = array();
         <label for="genre">
             <p>ジャンル</p>
             <select name="genre" id="genre">
-                <option value="html">HTML</option>
-                <option value="css">CSS</option>
-                <option value="js">JavaScript</option>
-                <option value="php">PHP</option>
-                <option value="swift">Swift</option>
-                <option value="ios">IOS</option>
-                <option value="web">WEB</option>
-                <option value="other">OTHER</option>
+            <?php foreach ($GENRES as $genre): ?>
+                    <option value="<?= $genre ?>"><?= $genre ?></option>
+                <?php endforeach; ?>
             </select>
         </label>
         <p class="err"><?= $errors["markdown"] ?></p>

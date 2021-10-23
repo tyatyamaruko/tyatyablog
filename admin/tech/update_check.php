@@ -9,6 +9,12 @@ $post = html_special_chars($_POST);
 
 $errors = [];
 
+if (isset($_POST["id"])) {
+    $id = $_POST["id"];
+} else {
+    exit("記事のIDが指定されていません。IDを指定してください");
+}
+
 if (isset($post['title']) && $post['title'] != "") {
     $title = $post['title'];
     if (mb_strlen($title) > 64) {
@@ -34,11 +40,12 @@ if (isset($post['markdown']) && $post['markdown'] != "") {
 }
 
 if (count($errors) > 0) {
-    header("Location: insert.php");
+    header("Location: update.php?id={$id}");
     $_SESSION["error"] = $errors;
     exit();
 }
 
+$id = htmlspecialchars($id);
 $title = htmlspecialchars($title);
 $genre = htmlspecialchars($genre);
 $markdown = htmlspecialchars($markdown);
@@ -49,14 +56,14 @@ try {
     $pdo = new PDO(DSN, USERNAME, PASSWORD);
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    $sql = "insert into techarticles (title, genre, markdown) values (?,?,?)";
+    $sql = "update " . TECH_TABLE . " set title=?, genre=?, markdown=? where id=?";
 
     $stmt = $pdo -> prepare($sql);
     $data[] = $title;
     $data[] = $genre;
     $data[] = $markdown;
+    $data[] = $id;
     $stmt -> execute($data);
 
 } catch (PDOException $e) { 
