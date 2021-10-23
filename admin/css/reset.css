@@ -12,3 +12,8 @@ body {
     height: 100vh;
     width: 100vw;
 }
+
+pre {
+    padding: 30px 10px;
+    color: #fff;
+}

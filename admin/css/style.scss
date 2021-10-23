@@ -83,3 +83,120 @@ main {
         }
     }
 }
+
+/* ----------------------------------------------------------------------------------------------
+
+                        detail.php用のcss
+
+---------------------------------------------------------------------------------------------- */
+
+main.detail {
+    margin: 30px auto;
+    display: flex;
+
+    nav {
+        width: 20%;
+        ul {
+            width: 100%;
+            margin: 0;
+            li {
+                border: 0;
+                padding: 0 20px;
+            }
+
+            .delete {
+                p {
+                    color: red;
+                    cursor: pointer;
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+    .content {
+        width: 60%;
+        .title {
+            font-size: 2.5rem;
+            border-bottom: solid 3px #000;
+            margin-bottom: 30px;
+        }
+    
+    
+        h1 {
+            font-size: 2rem;
+            padding-left: 30px;
+            border-left: solid 8px #000;
+            margin-bottom: 30px;
+        }
+    }
+
+    .conf-delete {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba($color: #000000, $alpha: .4);
+
+        .screen {
+            background: #fff;
+            width: 50%;
+            height: 40%;
+            margin: 0 auto;
+            margin-top: calc(10%);
+            padding: 30px 10px;
+
+            h2 {
+                margin-top: 50px;
+                font-size: 2rem;
+                text-align: center;
+                color: red;
+            }
+            p {
+                text-align: center;
+            }
+            .button {
+                position: relative;
+                display: flex;
+                justify-content: space-around;
+                top: 100px;
+
+                a {
+                    color: #fff;
+                    border-radius: 15px;
+                    width: 30%;
+                    text-align: center;
+                    padding: 10px 0;
+                }
+                .yes {
+                    background: #f00;
+                }
+                .no {
+                    background: rgb(0, 145, 255);
+                    cursor: pointer;
+                }
+
+            }
+        }
+    }
+
+
+
+    p {
+        font-size: 1.4rem;
+    }
+
+    a {
+        font-size: 1.4rem;
+        color: rgb(0, 145, 255);
+        width: auto;
+    }
+
+    .point {
+        background: #eee;
+        padding: 3px;
+        border-radius: 5px;
+    }
+}
