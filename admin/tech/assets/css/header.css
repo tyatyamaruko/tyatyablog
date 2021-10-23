@@ -1,0 +1,29 @@
+header {
+  height: 100px;
+  background: #fff;
+  border-bottom: solid 3px #000;
+}
+header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+header ul li {
+  line-height: 100px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+header ul li:hover {
+  background: #000;
+}
+header ul li:hover a {
+  color: #fff;
+}
+header ul li a {
+  font-size: 1.5rem;
+}
+/*# sourceMappingURL=header.css.map */

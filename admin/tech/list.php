@@ -1,19 +1,17 @@
 <?php
 
+require_once "../env.php";
 require_once "../../models/tech-article.php";
 
 // データベースに保存
-$dsn = "mysql:dbname=tyatyablog;host=localhost;charset=utf8mb4";
-$username = "root";
-$password = "";
 
 try {
-    $pdo = new PDO($dsn, $username, $password);
+    $pdo = new PDO(DSN, USERNAME, PASSWORD);
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    $sql = "select * from techarticles where 1";
+    $sql = "select * from techarticles where 1 order by created_at desc";
 
     $stmt = $pdo->prepare($sql);
     $stmt->execute($data);
@@ -43,21 +41,25 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
     <title>管理画面</title>
 </head>
 
 <body>
-    <ul>
-        <?php foreach ($articles as $article) { ?>
-            <li>
-                <a href="./detail.php?id=<?=$article -> id?>">
-                    <h2><?= $article->title ?></h2>
-                    <p><?= $article->genre ?></p>
-                    <p>投稿日：<?= $article->created_at ?></p>
-                </a>
-            </li>
-        <?php } ?>
-    </ul>
+    <?php @include("./assets/header.php"); ?>
+    <main>
+        <ul>
+            <?php foreach ($articles as $article) : ?>
+                <li>
+                    <a href="./detail.php?id=<?= $article->id ?>">
+                        <h2><?= $article->title ?></h2>
+                        <p><?= $article->genre ?></p>
+                        <p>投稿日：<?= $article->created_at ?></p>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </main>
 </body>
 
 </html>

@@ -49,13 +49,13 @@ form label select {
   padding: 10px 30px;
 }
 
-ul {
+main ul {
   width: 60%;
   height: 100%;
   margin: 0 auto;
   padding: 0;
 }
-ul li {
+main ul li {
   width: 100%;
   margin: 0 auto;
   border: solid 3px #000;
@@ -63,27 +63,27 @@ ul li {
   padding: 5px;
   margin-top: 40px;
 }
-ul li a {
+main ul li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-ul li h2 {
+main ul li h2 {
   font-size: 2rem;
   width: 100%;
 }
-ul li p {
+main ul li p {
   font-size: 1.4rem;
   text-transform: uppercase;
 }
-ul li p:first-child {
+main ul li p:first-child {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
-ul li p:last-child {
+main ul li p:last-child {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;

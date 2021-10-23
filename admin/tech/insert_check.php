@@ -1,14 +1,10 @@
 <?php
-
-use cebe\markdown\MarkdownExtra;
-
-require_once "../../vendor/autoload.php";
-
-
 session_start();
 session_regenerate_id(true);
 
 require_once "../../Library/lib.php";
+require_once "../env.php";
+
 $post = html_special_chars($_POST);
 
 $errors = [];
@@ -45,12 +41,9 @@ if (count($errors) > 0) {
 
 
 // データベースに保存
-$dsn = "mysql:dbname=tyatyablog;host=localhost;charset=utf8mb4";
-$username = "root";
-$password = "";
 
 try {
-    $pdo = new PDO($dsn, $username, $password);
+    $pdo = new PDO(DSN, USERNAME, PASSWORD);
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);

@@ -46,37 +46,39 @@ form {
     }
 }
 
-ul {
-    width: 60%;
-    height: 100%;
-    margin: 0 auto;
-    padding: 0;
-    li {
-        width: 100%;
+main {
+    ul {
+        width: 60%;
+        height: 100%;
         margin: 0 auto;
-        border: solid 3px #000;
-        border-radius: 15px;
-        padding: 5px;
-        margin-top: 40px;
-        a {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        h2 {
-            font-size: 2rem;
+        padding: 0;
+        li {
             width: 100%;
-        }
-        p {
-            font-size: 1.4rem;
-            text-transform: uppercase;
-            &:first-child {
-                flex: 1;
-                
+            margin: 0 auto;
+            border: solid 3px #000;
+            border-radius: 15px;
+            padding: 5px;
+            margin-top: 40px;
+            a {
+                display: flex;
+                flex-wrap: wrap;
             }
-            &:last-child {
-                flex: 2;
-                text-align: right;
+    
+            h2 {
+                font-size: 2rem;
+                width: 100%;
+            }
+            p {
+                font-size: 1.4rem;
+                text-transform: uppercase;
+                &:first-child {
+                    flex: 1;
+                    
+                }
+                &:last-child {
+                    flex: 2;
+                    text-align: right;
+                }
             }
         }
     }
