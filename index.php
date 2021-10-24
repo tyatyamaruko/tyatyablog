@@ -1,5 +1,37 @@
+<?php
+require_once "./models/tech-article.php";
+require_once "./admin/env.php";
+
+try {
+    $pdo = new PDO(DSN, USERNAME, PASSWORD);
+
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+    $sql = "select * from techarticles where 1 order by created_at desc limit 5";
+
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute($data);
+
+    $articles = [];
+
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $articles[] = new TechArticle($row);
+    }
+
+    // var_dump($articles);/
+} catch (PDOException $e) {
+    // エラーが発生した場合は「500 Internal Server Error」でテキストとして表示して終了する
+    // - もし手抜きしたくない場合は普通にHTMLの表示を継続する
+    // - ここではエラー内容を表示しているが， 実際の商用環境ではログファイルに記録して， Webブラウザには出さないほうが望ましい
+    header('Content-Type: text/plain; charset=UTF-8', true, 500);
+    exit($e->getMessage());
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,39 +41,31 @@
     <link rel="stylesheet" href="./css/index.css">
     <title>ちゃちゃブログ</title>
 </head>
+
 <body>
     <header>
         <h1>ちゃちゃブログ</h1>
     </header>
-    <main>
+    <main id="index">
         <nav>
             <ul class="menu">
                 <li><a href="./tech.php">技術記事</a></li>
                 <li><a href="./tech.php">日常記事</a></li>
-                <li><a href="./tech.php">問い合わせ</a></li>
+                <!-- <li><a href="./tech.php">問い合わせ</a></li> -->
             </ul>
 
             <ul class="topic">
                 <li>
-                    <p class="title">最新記事</p>
-                    <p class="date">2021-10-19</p>
+                    <h5>最新記事</h5>
                 </li>
-                <li>
-                    <p class="title">最新記事</p>
-                    <p class="date">2021-10-19</p>
-                </li>
-                <li>
-                    <p class="title">最新記事</p>
-                    <p class="date">2021-10-19</p>
-                </li>
-                <li>
-                    <p class="title">最新記事</p>
-                    <p class="date">2021-10-19</p>
-                </li>
-                <li>
-                    <p class="title">最新記事</p>
-                    <p class="date">2021-10-19</p>
-                </li>
+                <?php foreach ($articles as $article) : ?>
+                    <li>
+                        <a href="./detail.php?id=<?= $article->id ?>">
+                            <p class="title"><?= $article->title ?></p>
+                            <p class="date"><?= $article->created_at ?></p>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
             </ul>
         </nav>
 
@@ -68,4 +92,5 @@
 
     </footer>
 </body>
+
 </html>

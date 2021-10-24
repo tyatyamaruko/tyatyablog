@@ -70,6 +70,7 @@ try {
                 <?php endforeach; ?>
             </select>
         </label>
+        
         <p class="err"><?= $errors["markdown"] ?></p>
         <textarea name="markdown" id="mde"><?= $article -> markdown ?></textarea>
 

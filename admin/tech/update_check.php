@@ -33,6 +33,7 @@ if (isset($post['genre']) && $post['genre'] != "") {
     $errors['genre'] = "ジャンルが入力されていません";
 }
 
+
 if (isset($post['markdown']) && $post['markdown'] != "") {
     $markdown = $post['markdown'];
 } else {

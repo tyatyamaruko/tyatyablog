@@ -31,7 +31,7 @@ $_SESSION["error"] = array();
         <label for="genre">
             <p>ジャンル</p>
             <select name="genre" id="genre">
-            <?php foreach ($GENRES as $genre): ?>
+                <?php foreach ($GENRES as $genre) : ?>
                     <option value="<?= $genre ?>"><?= $genre ?></option>
                 <?php endforeach; ?>
             </select>

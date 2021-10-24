@@ -1,13 +1,13 @@
 form {
     width: 80%;
-    margin: 200px auto 0;
+    margin: 100px auto 0;
 
     .err {
         color: red;
         text-align: right;
         margin-right: 30px;
     }
-    label {
+    > label {
         display: flex;
         margin: 30px;
         p {
@@ -22,6 +22,11 @@ form {
         select {
             flex: 2;
             font-size: 1.5rem;
+        }
+
+        > label {
+            font-size: 1.5rem;
+            
         }
     }
 

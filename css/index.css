@@ -1,26 +1,25 @@
-main .container {
-  -webkit-box-flex: 4;
-      -ms-flex: 4;
-          flex: 4;
+main#index .container article.top {
+  padding: 0 20px;
+  width: 100%;
 }
-main .container article.top h2 {
+main#index .container article.top h2 {
   font-size: 1.8rem;
   font-weight: bold;
-  width: 50%;
+  width: 80%;
   border-bottom: solid 3px #000;
   margin: 200px auto 0;
   text-align: center;
 }
-main .container article.top article.description {
-  width: 60%;
+main#index .container article.top article.description {
+  width: 100%;
   margin: 40px auto;
 }
-main .container article.top article.description p {
+main#index .container article.top article.description p {
   font-size: 1.4rem;
   text-align: justify;
   text-justify: inter-ideograph;
 }
-main .container article.top article.description p span {
+main#index .container article.top article.description p span {
   background: #eee;
   font-size: 1.4rem;
   border-radius: 5px;
