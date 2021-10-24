@@ -1,17 +1,48 @@
 <?php
-require_once "./models/tech-article.php";
-require_once "./admin/env.php";
+
+use cebe\markdown\MarkdownExtra;
+
+require_once "./vendor/autoload.php";
+require("./admin/env.php");
+require("./models/tech-article.php");
+
+if (isset($_GET["id"])) {
+    $id = $_GET["id"];
+} else {
+    exit("記事のIDが指定されていません。IDを指定してください");
+}
+
+$id = htmlspecialchars($id);
 
 try {
     $pdo = new PDO(DSN, USERNAME, PASSWORD);
-
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
+    $sql = "select * from " . TECH_TABLE . " where id=?";
+
+    $stmt = $pdo->prepare($sql);
+    $data[] = $id;
+    $stmt->execute($data);
+    $article = "";
+
+    while ($row = $stmt->fetch()) {
+        $article = new TechArticle($row);
+    }
+} catch (PDOException $e) {
+    header('Content-Type: text/plain; charset=UTF-8', true, 500);
+    exit($e->getMessage());
+}
+
+$markdownConverter = new MarkdownExtra();
+$markdown = $markdownConverter->parse($article->markdown);
+
+
+try {
     $sql = "select * from techarticles where 1 order by created_at desc limit 5";
 
     $stmt = $pdo->prepare($sql);
-    $stmt->execute($data);
+    $stmt->execute();
 
     $articles = [];
 
@@ -29,6 +60,7 @@ try {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -38,15 +70,18 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/index.css">
-    <title>ちゃちゃブログ</title>
+    <link rel="stylesheet" href="./css/detail.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+    <title>ちゃちゃブログ｜<?= $article->title ?></title>
 </head>
 
 <body>
     <header>
         <h1>ちゃちゃブログ</h1>
     </header>
-    <main id="index">
+
+    <main class="detail">
         <nav>
             <ul class="menu">
                 <li><a href="./tech.php">技術記事</a></li>
@@ -58,39 +93,29 @@ try {
                 <li>
                     <h5>最新記事</h5>
                 </li>
-                <?php foreach ($articles as $article) : ?>
+                <?php foreach ($articles as $item) : ?>
                     <li>
-                        <a href="./article.php?id=<?= $article->id ?>">
-                            <p class="title"><?= $article->title ?></p>
-                            <p class="date"><?= $article->created_at ?></p>
+                        <a href="./article.php?id=<?= $item->id ?>">
+                            <p class="title"><?= $item->title ?></p>
+                            <p class="date"><?= $item->created_at ?></p>
                         </a>
                     </li>
                 <?php endforeach; ?>
             </ul>
         </nav>
-
-        <div class="container">
-            <article class="top">
-                <h2>Hello World</h2>
-
-                <article class="description">
-                    <p>
-                        本サイトは主に技術ブログとして更新していく予定ではありますが、筆者の気分によってかなりの確率で愛犬についての投稿になる可能性があります。<br>
-                        また、技術ブログはWEB系(<span>HTML</span>, <span>CSS</span>, <span>JavaScript</span>, <span>PHP</span>)と
-                        ネイティブアプリ(特に<span>Swift</span>)やその周辺についての投稿が主になりますが、
-                        興味を持ったことについての投稿もたまにする予定です。<br>
-                        おもしろおかしく記事を書いて行けたらいいなと思っておりますので是非クスッと笑いながら読んでいただけますと光栄です。
-                    </p>
-                </article>
-            </article>
+        <div class="content">
+            <div class="title">
+                <?= $article->title ?>
+            </div>
+            <?= $markdown ?>
         </div>
-
-        <div class="adsense"></div>
     </main>
-
-    <footer>
-
-    </footer>
+    <script>
+        $(function() {
+            let pre = $("pre");
+            pre.addClass("prettyprint");
+        });
+    </script>
 </body>
 
 </html>

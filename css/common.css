@@ -21,9 +21,7 @@ main nav {
   position: fixed;
   top: 88px;
   z-index: 0;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  left: 0;
   width: 20%;
   height: 100%;
   border-right: solid 1px #000;
@@ -80,5 +78,25 @@ main .adsense {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+h5 {
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+pre {
+  padding: 30px 10px;
 }
 /*# sourceMappingURL=common.css.map */

@@ -61,7 +61,7 @@ try {
                 </li>
                 <?php foreach ($articles as $article) : ?>
                     <li>
-                        <a href="./detail.php?id=<?= $article->id ?>">
+                        <a href="./article.php?id=<?= $article->id ?>">
                             <p class="title"><?= $article->title ?></p>
                             <p class="date"><?= $article->created_at ?></p>
                         </a>
