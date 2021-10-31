@@ -42,31 +42,9 @@ try {
 </head>
 
 <body>
-    <header>
-        <h1>ちゃちゃブログ</h1>
-    </header>
+    <?php @include("./assets/header.php"); ?>
     <main>
-    <nav>
-            <ul class="menu">
-                <li><a href="./tech.php">技術記事</a></li>
-                <li><a href="./tech.php">日常記事</a></li>
-                <!-- <li><a href="./tech.php">問い合わせ</a></li> -->
-            </ul>
-
-            <ul class="topic">
-                <li>
-                    <h5>最新記事</h5>
-                </li>
-                <?php foreach ($articles as $article) : ?>
-                    <li>
-                        <a href="./article.php?id=<?= $article->id ?>">
-                            <p class="title"><?= $article->title ?></p>
-                            <p class="date"><?= $article->created_at ?></p>
-                        </a>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        </nav>
+        <?php @include("./assets/sidemenu.php"); ?>
 
         <div class="container">
             <article>
