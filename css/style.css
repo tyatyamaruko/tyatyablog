@@ -1,14 +1,194 @@
-* {
-    margin: 0;
-    font-size: 16px;
-    font-weight: normal;
-    list-style-type: none;
-    text-decoration: none;
-    padding: 0;
+header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  border-bottom: solid 1px #000;
+  width: 100%;
+  height: 88px;
+  background: #fff;
+}
+header h1 {
+  padding: 20px 0;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
 }
 
-body {
-    width: 100%;
-    height: 100vh;
-    height: 100%;
+main {
+  height: calc(100% - 89px);
 }
+main nav {
+  position: fixed;
+  top: 88px;
+  z-index: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  border-right: solid 1px #000;
+  background: #fff;
+}
+main nav .menu {
+  padding-top: 40px;
+}
+main nav .menu li {
+  font-size: 1.4rem;
+  padding-left: 20px;
+  line-height: 2;
+}
+main nav .menu li a {
+  font-size: 1.4rem;
+  color: #000;
+}
+main nav .menu li:hover {
+  background: #000;
+}
+main nav .menu li:hover a {
+  color: #fff;
+}
+main nav .topic {
+  margin-top: 50px;
+}
+main nav .topic li {
+  padding-left: 20px;
+  border-bottom: dashed 1px #000;
+}
+main nav .topic li:hover {
+  color: #fff;
+  background: #000;
+}
+main nav .topic li:hover p.title {
+  color: #fff;
+}
+main nav .topic li h5 {
+  font-size: 2rem;
+}
+main nav .topic li p {
+  font-size: 1.4rem;
+}
+main nav .topic li p.title {
+  color: #000;
+}
+main nav .topic li p.date {
+  color: #259bda;
+}
+main .container {
+  margin: 0 20%;
+}
+main .adsense {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+h5 {
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+pre {
+  padding: 30px 10px;
+}
+
+main.detail {
+  margin: 88px 20%;
+  padding: 20px 40px;
+}
+main.detail div.title {
+  font-size: 3rem;
+  border-bottom: solid 3px #000;
+}
+main.detail h1 {
+  margin-top: 30px;
+  padding-left: 30px;
+  border-left: solid 8px #000;
+}
+
+main#index .container article.top {
+  padding: 0 20px;
+  width: 100%;
+}
+main#index .container article.top h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  width: 80%;
+  border-bottom: solid 3px #000;
+  margin: 200px auto 0;
+  text-align: center;
+}
+main#index .container article.top article.description {
+  width: 100%;
+  margin: 40px auto;
+}
+main#index .container article.top article.description p {
+  font-size: 1.4rem;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+main#index .container article.top article.description p span {
+  background: #eee;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+main#list {
+  margin: 88px 20%;
+}
+main#list p.no-lang {
+  text-align: center;
+}
+
+main .container {
+  margin-top: 100px;
+  margin-left: 20%;
+}
+main .container h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  width: 50%;
+  border-bottom: solid 3px #000;
+  margin: 30px auto 0;
+  text-align: center;
+}
+main .container ul {
+  width: 80%;
+  margin: 30px auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+main .container ul li {
+  font-size: 1.6rem;
+  width: 45%;
+  margin: 10px auto;
+  border: solid 3px #aaa;
+  border-radius: 15px;
+  overflow: hidden;
+}
+main .container ul li div {
+  text-align: center;
+}
+main .container ul li div img {
+  width: 100%;
+  height: 200px;
+}
+main .container ul li div p {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+/*# sourceMappingURL=style.css.map */

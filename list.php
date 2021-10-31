@@ -65,8 +65,6 @@ try {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/list.css">
     <title>ちゃちゃブログ｜<?= $lang ?>記事</title>
 </head>
 
@@ -103,7 +101,7 @@ try {
                     <li>
                         <a href="./article.php?id=<?= $select_article->id ?>">
                             <h2><?= $select_article->title ?></h2>
-                            <p><?= $select_article->genre ?></p>
+                            <p>言語：<?= $select_article->genre ?></p>
                             <p>投稿日：<?= $select_article->created_at ?></p>
                         </a>
                     </li>
