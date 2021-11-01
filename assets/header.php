@@ -1,11 +1,7 @@
 <header>
-    <a href="./index.php">
-        <h1>ちゃちゃブログ</h1>
-    </a>
-
-    <div class="sp-menu sp">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+    <h1>
+        <a href="./index.php">
+            ちゃちゃブログ
+        </a>
+    </h1>
 </header>

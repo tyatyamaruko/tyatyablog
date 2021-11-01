@@ -1,3 +1,12 @@
+<input type="checkbox" id="menu">
+<label class="sp-menu sp" for="menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</label>
+
+<label for="menu" class="back"></label>
+
 <nav>
     <ul class="menu">
         <li><a href="./tech.php">技術記事</a></li>

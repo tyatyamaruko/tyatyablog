@@ -68,17 +68,6 @@ try {
     <footer>
 
     </footer>
-
-    <script>
-        $(function() {
-            $(".sp-menu").on("click", function() {
-                $(this).addClass("active");
-            });
-            $(".active").on("click", function() {
-                $(this).removeClass("active");
-            });
-        });
-    </script>
 </body>
 
 </html>
