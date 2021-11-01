@@ -6,6 +6,11 @@ session_regenerate_id(true);
 require("../env.php");
 require("../../models/tech-article.php");
 
+if (!isset($_SESSION['login'])) {
+    header("Location: ../auth/login.php");
+    exit;
+}
+
 
 $errors = $_SESSION['error'];
 $_SESSION["error"] = array();

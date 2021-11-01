@@ -1,24 +1,44 @@
 main#index {
     .container {
+        @media screen and (max-width: $max-width) {
+            margin: 0;
+            width: 100%;
+        }
+
         article.top {
             padding: 0 20px;
             width: 100%;
+
+            @media screen and (max-width: $max-width) {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+
             h2 {
                 font-size: 1.8rem;
                 font-weight: bold;
                 width: 80%;
                 border-bottom: solid 3px #000;
-                margin: 200px auto 0;
+                margin: 100px auto 0;
                 text-align: center;
             }
 
             article.description {
                 width: 100%;
                 margin: 40px auto;
+
+                @media screen and (max-width: $max-width) {
+                    margin: 40px 0 0;
+                }
                 p {
                     font-size: 1.4rem;
                     text-align: justify;
                     text-justify: inter-ideograph;
+                    @media screen and (max-width: $max-width) {
+                        padding: 0 20px;
+                    }
+
                     span {
                         background: #eee;
                         font-size: 1.4rem;
@@ -29,5 +49,10 @@ main#index {
                 }
             }
         }
+    }
+
+    @media screen and (max-width: $max-width) {
+        margin: 0;
+        width: 100%;
     }
 }

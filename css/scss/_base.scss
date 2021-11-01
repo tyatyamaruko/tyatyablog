@@ -1,0 +1,9 @@
+$max-width: 450px;
+
+.sp {
+    display: none;
+
+    @media screen and (max-width: $max-width) {
+        display: block;
+    }
+}

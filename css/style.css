@@ -8,6 +8,15 @@
   font-weight: normal;
 }
 
+.sp {
+  display: none;
+}
+@media screen and (max-width: 450px) {
+  .sp {
+    display: block;
+  }
+}
+
 header {
   position: fixed;
   top: 0;
@@ -124,32 +133,61 @@ main.detail h1 {
   border-left: solid 8px #000;
 }
 
+@media screen and (max-width: 450px) {
+  main#index .container {
+    margin: 0;
+    width: 100%;
+  }
+}
 main#index .container article.top {
   padding: 0 20px;
   width: 100%;
+}
+@media screen and (max-width: 450px) {
+  main#index .container article.top {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
 }
 main#index .container article.top h2 {
   font-size: 1.8rem;
   font-weight: bold;
   width: 80%;
   border-bottom: solid 3px #000;
-  margin: 200px auto 0;
+  margin: 100px auto 0;
   text-align: center;
 }
 main#index .container article.top article.description {
   width: 100%;
   margin: 40px auto;
 }
+@media screen and (max-width: 450px) {
+  main#index .container article.top article.description {
+    margin: 40px 0 0;
+  }
+}
 main#index .container article.top article.description p {
   font-size: 1.4rem;
   text-align: justify;
   text-justify: inter-ideograph;
+}
+@media screen and (max-width: 450px) {
+  main#index .container article.top article.description p {
+    padding: 0 20px;
+  }
 }
 main#index .container article.top article.description p span {
   background: #eee;
   font-size: 1.4rem;
   border-radius: 5px;
   padding: 5px;
+}
+@media screen and (max-width: 450px) {
+  main#index {
+    margin: 0;
+    width: 100%;
+  }
 }
 
 main#list {
@@ -200,5 +238,50 @@ main .container ul li div img {
 main .container ul li div p {
   font-size: 1.8rem;
   font-weight: bold;
+}
+
+@media screen and (max-width: 450px) {
+  nav {
+    display: none;
+  }
+}
+
+.sp-menu {
+  width: 50px;
+  height: 70px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.sp-menu span {
+  display: block;
+  margin: 0 auto;
+  width: 40px;
+  height: 5px;
+  background-color: #000;
+  position: absolute;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+.sp-menu span:nth-of-type(1) {
+  top: 20px;
+}
+.sp-menu span:nth-of-type(2) {
+  top: 35px;
+}
+.sp-menu span:nth-of-type(3) {
+  top: 50px;
+}
+
+.sp-menu.active span:nth-of-type(1) {
+  -webkit-transform: rotateX(45deg);
+          transform: rotateX(45deg);
+}
+.sp-menu.active span:nth-of-type(2) {
+  display: none;
+}
+.sp-menu.active span:nth-of-type(3) {
+  -webkit-transform: rotateX(-45deg);
+          transform: rotateX(-45deg);
 }
 /*# sourceMappingURL=style.css.map */

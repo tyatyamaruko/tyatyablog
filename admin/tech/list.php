@@ -1,9 +1,15 @@
 <?php
 
+session_start();
+session_regenerate_id(true);
+
 require_once "../env.php";
 require_once "../../models/tech-article.php";
 
-// データベースに保存
+if (!isset($_SESSION['login'])) {
+    header("Location: ../auth/login.php");
+    exit;
+}
 
 try {
     $pdo = new PDO(DSN, USERNAME, PASSWORD);

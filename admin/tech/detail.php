@@ -1,10 +1,18 @@
 <?php
 
+session_start();
+session_regenerate_id(true);
+
 use cebe\markdown\MarkdownExtra;
 
 require_once "../../vendor/autoload.php";
 require("../env.php");
 require("../../models/tech-article.php");
+
+if (!isset($_SESSION['login'])) {
+    header("Location: ../auth/login.php");
+    exit;
+}
 
 if (isset($_GET["id"])) {
     $id = $_GET["id"];

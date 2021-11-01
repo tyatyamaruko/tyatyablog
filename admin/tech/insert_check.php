@@ -5,6 +5,11 @@ session_regenerate_id(true);
 require_once "../../Library/lib.php";
 require_once "../env.php";
 
+if (!isset($_SESSION['login'])) {
+    header("Location: ../auth/login.php");
+    exit;
+}
+
 $post = html_special_chars($_POST);
 
 $errors = [];
