@@ -10,6 +10,7 @@ main.detail {
     div.title {
         font-size: 3rem;
         border-bottom: solid 3px #000;
+        margin-bottom: 30px;
     }
 
     h1 {
@@ -27,4 +28,8 @@ main.detail {
             }
         }
     }
+}
+
+pre code {
+    color: #fff;
 }

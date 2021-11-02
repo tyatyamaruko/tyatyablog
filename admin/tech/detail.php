@@ -102,6 +102,10 @@ $markdown = $markdownConverter->parse($article->markdown);
         $(function() {
             let pre = $("pre");
             pre.addClass("prettyprint");
+            pre.addClass("prettyprinted");
+            let code = $("code");
+            code.addClass("prettyprint");
+            code.addClass("prettyprinted");
 
             $(".delete").on("click", function() {
                 $(".conf-delete").css("display", "block");
@@ -114,6 +118,10 @@ $markdown = $markdownConverter->parse($article->markdown);
             $(".no").on("click", function() {
                 $(".conf-delete").css("display", "none");
             });
+        });
+
+        window.addEventListener("load", function(event) {
+            PR.prettyPrint()
         });
     </script>
 </body>

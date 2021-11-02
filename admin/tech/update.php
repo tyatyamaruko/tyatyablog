@@ -76,6 +76,7 @@ try {
             </select>
         </label>
         
+        <span>コードを書く場合は```の後に{ .lang-[言語の拡張子] .prettyprint }と書いてください。</span>
         <p class="err"><?= $errors["markdown"] ?></p>
         <textarea name="markdown" id="mde"><?= htmlspecialchars_decode($article -> markdown) ?></textarea>
 

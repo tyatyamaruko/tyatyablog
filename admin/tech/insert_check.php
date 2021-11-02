@@ -44,11 +44,6 @@ if (count($errors) > 0) {
     exit();
 }
 
-$title = htmlspecialchars($title);
-$genre = htmlspecialchars($genre);
-$markdown = htmlspecialchars($markdown);
-
-var_dump($markdown);
 
 // データベースに保存
 

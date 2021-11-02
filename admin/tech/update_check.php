@@ -51,11 +51,6 @@ if (count($errors) > 0) {
     exit();
 }
 
-$id = htmlspecialchars($id);
-$title = htmlspecialchars($title);
-$genre = htmlspecialchars($genre);
-$markdown = htmlspecialchars($markdown);
-
 // データベースに保存
 
 try {
