@@ -147,7 +147,7 @@ main.detail .conf-delete {
 main.detail .conf-delete .screen {
   background: #fff;
   width: 50%;
-  height: 40%;
+  height: 50%;
   margin: 0 auto;
   margin-top: calc(10%);
   padding: 30px 10px;
@@ -168,7 +168,7 @@ main.detail .conf-delete .screen .button {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  top: 100px;
+  top: 40px;
 }
 main.detail .conf-delete .screen .button a {
   color: #fff;
