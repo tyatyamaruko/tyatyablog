@@ -18,85 +18,95 @@
 }
 
 /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
-.prettyprint {
-  background: #000;
-  font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco, Consolas, monospace;
+pre.prettyprint {
+  background: #000000;
+  font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
   border: 0 !important;
+  /* Specify class=linenums on a pre to get line numbering */
 }
-
-.pln {
+pre.prettyprint .pln {
   color: #eaeaea;
 }
-
-ol.linenums {
+pre.prettyprint ol.linenums {
   margin-top: 0;
   margin-bottom: 0;
   color: #969896;
 }
-
-li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
+pre.prettyprint li.L0,
+pre.prettyprint li.L1,
+pre.prettyprint li.L2,
+pre.prettyprint li.L3,
+pre.prettyprint li.L4,
+pre.prettyprint li.L5,
+pre.prettyprint li.L6,
+pre.prettyprint li.L7,
+pre.prettyprint li.L8,
+pre.prettyprint li.L9 {
   padding-left: 1em;
-  background-color: #000;
+  background-color: #000000;
   list-style-type: decimal;
 }
-
 @media screen {
-  .str {
+  pre.prettyprint {
+    /* string content */
+    /* keyword */
+    /* comment */
+    /* type name */
+    /* literal value */
+    /* punctuation */
+    /* lisp open bracket */
+    /* lisp close bracket */
+    /* markup tag name */
+    /* markup attribute name */
+    /* markup attribute value */
+    /* declaration */
+    /* variable name */
+    /* function name */
+  }
+  pre.prettyprint .str {
     color: #b9ca4a;
   }
-
-  .kwd {
+  pre.prettyprint .kwd {
     color: #c397d8;
   }
-
-  .com {
+  pre.prettyprint .com {
     color: #969896;
   }
-
-  .typ {
+  pre.prettyprint .typ {
     color: #7aa6da;
   }
-
-  .lit {
+  pre.prettyprint .lit {
     color: #e78c45;
   }
-
-  .pun {
+  pre.prettyprint .pun {
     color: #eaeaea;
   }
-
-  .opn {
+  pre.prettyprint .opn {
     color: #eaeaea;
   }
-
-  .clo {
+  pre.prettyprint .clo {
     color: #eaeaea;
   }
-
-  .tag {
+  pre.prettyprint .tag {
     color: #d54e53;
   }
-
-  .atn {
+  pre.prettyprint .atn {
     color: #e78c45;
   }
-
-  .atv {
+  pre.prettyprint .atv {
     color: #70c0b1;
   }
-
-  .dec {
+  pre.prettyprint .dec {
     color: #e78c45;
   }
-
-  .var {
+  pre.prettyprint .var {
     color: #d54e53;
   }
-
-  .fun {
+  pre.prettyprint .fun {
     color: #7aa6da;
   }
 }
+
 header {
   position: fixed;
   top: 0;
@@ -196,7 +206,7 @@ p {
 }
 
 pre {
-  padding: 30px 10px;
+  padding: 20px 10px;
 }
 
 main.detail {
