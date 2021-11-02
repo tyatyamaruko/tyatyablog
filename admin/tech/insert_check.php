@@ -48,6 +48,8 @@ $title = htmlspecialchars($title);
 $genre = htmlspecialchars($genre);
 $markdown = htmlspecialchars($markdown);
 
+var_dump($markdown);
+
 // データベースに保存
 
 try {

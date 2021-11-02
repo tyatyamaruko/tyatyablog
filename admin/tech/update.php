@@ -77,7 +77,7 @@ try {
         </label>
         
         <p class="err"><?= $errors["markdown"] ?></p>
-        <textarea name="markdown" id="mde"><?= $article -> markdown ?></textarea>
+        <textarea name="markdown" id="mde"><?= htmlspecialchars_decode($article -> markdown) ?></textarea>
 
         <div class="btn">
             <div class="back-btn">

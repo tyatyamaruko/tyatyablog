@@ -1,7 +1,17 @@
 main#list {
     margin: 88px 20%;
 
+    @media screen and (max-width: $max-width) {
+        margin: 100px 10px;
+    }
+
     p.no-lang {
         text-align: center;
+    }
+
+    ul {
+        li {
+            border-bottom: dashed 1px #000;
+        }
     }
 }

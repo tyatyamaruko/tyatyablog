@@ -3,6 +3,10 @@ main {
 
         margin-top: 100px;
         margin-left: 20%;
+
+        @media screen and (max-width: $max-width) {
+            margin: 100px 0;
+        }
         
         h2 {
             font-size: 1.8rem;
@@ -11,6 +15,9 @@ main {
             border-bottom: solid 3px #000;
             margin: 30px auto 0;
             text-align: center;
+            @media screen and (max-width: $max-width) {
+                width: 80%;
+            }
         }
 
         ul {
@@ -19,6 +26,9 @@ main {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
+            @media screen and (max-width: $max-width) {
+                width: 100%;
+            }
             li {
                 font-size: 1.6rem;
                 width: 45%;
@@ -26,6 +36,9 @@ main {
                 border: solid 3px #aaa;
                 border-radius: 15px;
                 overflow: hidden;
+                @media screen and (max-width: $max-width) {
+                    width: 95%;
+                }
                 div {
                     text-align: center;
                     

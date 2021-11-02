@@ -9,6 +9,7 @@ require_once "../../vendor/autoload.php";
 require("../env.php");
 require("../../models/tech-article.php");
 
+
 if (!isset($_SESSION['login'])) {
     header("Location: ../auth/login.php");
     exit;
@@ -78,7 +79,7 @@ $markdown = $markdownConverter->parse($article->markdown);
             <div class="title">
                 <?= $article->title ?>
             </div>
-            <?= $markdown ?>
+            <?= htmlspecialchars_decode($markdown) ?>
         </div>
 
         <div class="conf-delete">

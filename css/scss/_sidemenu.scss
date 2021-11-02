@@ -45,13 +45,15 @@
 }
 
 main nav {
-    position: absolute;
-    width: 80%;
-    height: 100%;
-    top: 0;
-    z-index: 2;
-    left: -80%;
-    transition: all .2s;
+    @media screen and (max-width: $max-width) {
+        position: absolute;
+        width: 80%;
+        height: 100%;
+        top: 0;
+        z-index: 2;
+        left: -80%;
+        transition: all .2s;
+    }
 }
 
 #menu:checked ~ .sp-menu {

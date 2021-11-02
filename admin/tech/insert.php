@@ -1,4 +1,7 @@
 <?php
+require_once "../env.php";
+
+
 session_start();
 session_regenerate_id(true);
 

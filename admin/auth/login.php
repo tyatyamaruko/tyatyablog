@@ -14,11 +14,6 @@ if (isset($_POST["password"])) {
     $password = $_POST["password"];
 }
 
-var_dump($id);
-var_dump($password);
-var_dump(ID);
-var_dump(PASSWORD);
-
 if (isset($id) && isset($password)) {
     if (ID == $id && PASSWORD == $password) {
         $_SESSION['login'] = 1;

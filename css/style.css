@@ -11,7 +11,7 @@
 .sp {
   display: none;
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 699px) {
   .sp {
     display: block;
   }
@@ -123,6 +123,12 @@ main.detail {
   margin: 88px 20%;
   padding: 20px 40px;
 }
+@media screen and (max-width: 699px) {
+  main.detail {
+    margin: 100px 10px;
+    padding: 20px 0;
+  }
+}
 main.detail div.title {
   font-size: 3rem;
   border-bottom: solid 3px #000;
@@ -132,8 +138,11 @@ main.detail h1 {
   padding-left: 30px;
   border-left: solid 8px #000;
 }
+main.detail div.content pre code span {
+  word-wrap: break-word;
+}
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 699px) {
   main#index .container {
     margin: 0;
     width: 100%;
@@ -143,7 +152,7 @@ main#index .container article.top {
   padding: 0 20px;
   width: 100%;
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 699px) {
   main#index .container article.top {
     margin: 0;
     padding: 0;
@@ -162,7 +171,7 @@ main#index .container article.top article.description {
   width: 100%;
   margin: 40px auto;
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 699px) {
   main#index .container article.top article.description {
     margin: 40px 0 0;
   }
@@ -172,7 +181,7 @@ main#index .container article.top article.description p {
   text-align: justify;
   text-justify: inter-ideograph;
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 699px) {
   main#index .container article.top article.description p {
     padding: 0 20px;
   }
@@ -183,7 +192,7 @@ main#index .container article.top article.description p span {
   border-radius: 5px;
   padding: 5px;
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 699px) {
   main#index {
     margin: 0;
     width: 100%;
@@ -193,13 +202,26 @@ main#index .container article.top article.description p span {
 main#list {
   margin: 88px 20%;
 }
+@media screen and (max-width: 699px) {
+  main#list {
+    margin: 100px 10px;
+  }
+}
 main#list p.no-lang {
   text-align: center;
+}
+main#list ul li {
+  border-bottom: dashed 1px #000;
 }
 
 main .container {
   margin-top: 100px;
   margin-left: 20%;
+}
+@media screen and (max-width: 699px) {
+  main .container {
+    margin: 100px 0;
+  }
 }
 main .container h2 {
   font-size: 1.8rem;
@@ -208,6 +230,11 @@ main .container h2 {
   border-bottom: solid 3px #000;
   margin: 30px auto 0;
   text-align: center;
+}
+@media screen and (max-width: 699px) {
+  main .container h2 {
+    width: 80%;
+  }
 }
 main .container ul {
   width: 80%;
@@ -220,6 +247,11 @@ main .container ul {
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
+@media screen and (max-width: 699px) {
+  main .container ul {
+    width: 100%;
+  }
+}
 main .container ul li {
   font-size: 1.6rem;
   width: 45%;
@@ -227,6 +259,11 @@ main .container ul li {
   border: solid 3px #aaa;
   border-radius: 15px;
   overflow: hidden;
+}
+@media screen and (max-width: 699px) {
+  main .container ul li {
+    width: 95%;
+  }
 }
 main .container ul li div {
   text-align: center;
@@ -286,15 +323,17 @@ main .container ul li div p {
   top: 50px;
 }
 
-main nav {
-  position: absolute;
-  width: 80%;
-  height: 100%;
-  top: 0;
-  z-index: 2;
-  left: -80%;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+@media screen and (max-width: 699px) {
+  main nav {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    top: 0;
+    z-index: 2;
+    left: -80%;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
 }
 
 #menu:checked ~ .sp-menu {
