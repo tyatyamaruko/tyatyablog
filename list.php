@@ -68,6 +68,16 @@ try {
         <?php @include("./assets/sidemenu.php"); ?>
 
         <div class="contents">
+            <?php if ($type == 1) : ?>
+                <select name="genre" id="genre">
+                    <?php foreach ($GENRES as $i => $genre) : ?>
+                        <?php if($i != Count($GENRES) - 1) : ?>
+                        <option value="<?= $genre ?>"><?= $genre ?></option>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </select>
+            <?php endif; ?>
+
             <?php if (count($select_articles)) : ?>
                 <ul>
                     <?php foreach ($select_articles as $select_article) : ?>
