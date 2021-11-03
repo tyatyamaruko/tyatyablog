@@ -9,9 +9,12 @@ main#list {
         text-align: center;
     }
 
-    ul {
-        li {
-            border-bottom: dashed 1px #000;
+    .contents {
+        ul {
+            padding: 20px 30px;
+            li {
+                border-bottom: dashed 1px #000;
+            }
         }
     }
 }

@@ -24,4 +24,5 @@ $GENRES = [
     "ios",
     "web",
     "other",
+    "日常"
 ];

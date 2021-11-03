@@ -206,7 +206,7 @@ p {
 }
 
 pre {
-  padding: 20px 10px;
+  padding: 10px 10px;
 }
 
 main.detail {
@@ -224,10 +224,20 @@ main.detail div.title {
   border-bottom: solid 3px #000;
   margin-bottom: 30px;
 }
+@media screen and (max-width: 699px) {
+  main.detail div.title {
+    font-size: 2rem;
+  }
+}
 main.detail h1 {
   margin-top: 30px;
   padding-left: 30px;
   border-left: solid 8px #000;
+}
+@media screen and (max-width: 699px) {
+  main.detail h1 {
+    font-size: 1.7rem;
+  }
 }
 main.detail div.content pre code span {
   word-wrap: break-word;
@@ -305,7 +315,10 @@ main#list {
 main#list p.no-lang {
   text-align: center;
 }
-main#list ul li {
+main#list .contents ul {
+  padding: 20px 30px;
+}
+main#list .contents ul li {
   border-bottom: dashed 1px #000;
 }
 
@@ -429,6 +442,17 @@ main .container ul li div p {
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
   }
+}
+main nav ul.menu li a {
+  font-size: 1.4rem;
+}
+main nav ul.topic li h5 {
+  font-size: 1.4rem;
+  width: 100%;
+}
+main nav ul.topic li h5:hover {
+  background: #fff;
+  color: #000;
 }
 
 #menu:checked ~ .sp-menu {

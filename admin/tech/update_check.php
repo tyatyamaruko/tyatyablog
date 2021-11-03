@@ -38,6 +38,7 @@ if (isset($post['genre']) && $post['genre'] != "") {
     $errors['genre'] = "ジャンルが入力されていません";
 }
 
+$type = $post['type'];
 
 if (isset($post['markdown']) && $post['markdown'] != "") {
     $markdown = $post['markdown'];
@@ -58,11 +59,12 @@ try {
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "update " . TECH_TABLE . " set title=?, genre=?, markdown=? where id=?";
+    $sql = "update " . TECH_TABLE . " set title=?, genre=?, type=?, markdown=? where id=?";
 
     $stmt = $pdo -> prepare($sql);
     $data[] = $title;
     $data[] = $genre;
+    $data[] = $type;
     $data[] = $markdown;
     $data[] = $id;
     $stmt -> execute($data);

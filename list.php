@@ -1,8 +1,9 @@
 <?php
-if (isset($_GET["lang"]) && $_GET["lang"] != "") {
-    $lang = $_GET["lang"];
+if (isset($_GET["type"]) && $_GET["type"] != "") {
+    $type = $_GET["type"];
 } else {
-    exit("言語が指定されていません");
+    header("Location: index.php");
+    exit;
 }
 
 require_once "./models/tech-article.php";
@@ -14,10 +15,10 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    $sql = "select * from techarticles where genre=? order by created_at desc";
+    $sql = "select * from techarticles where type=? order by created_at desc";
 
     $stmt = $pdo->prepare($sql);
-    $data[] = $lang;
+    $data[] = $type;
     $stmt->execute($data);
 
     $select_articles = [];
@@ -35,6 +36,8 @@ try {
     exit($e->getMessage());
 }
 
+
+// sidemenu用
 try {
     $sql = "select * from techarticles where 1 order by created_at desc limit 5";
 
@@ -64,21 +67,23 @@ try {
     <main id="list">
         <?php @include("./assets/sidemenu.php"); ?>
 
-        <?php if (count($select_articles)) : ?>
-            <ul>
-                <?php foreach ($select_articles as $select_article) : ?>
-                    <li>
-                        <a href="./article.php?id=<?= $select_article->id ?>">
-                            <h2><?= $select_article->title ?></h2>
-                            <p>言語：<?= $select_article->genre ?></p>
-                            <p>投稿日：<?= $select_article->created_at ?></p>
-                        </a>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        <?php else : ?>
-            <p class="no-lang">まだ<?= $lang ?>の記事は投稿されていません</p>
-        <?php endif; ?>
+        <div class="contents">
+            <?php if (count($select_articles)) : ?>
+                <ul>
+                    <?php foreach ($select_articles as $select_article) : ?>
+                        <li>
+                            <a href="./article.php?id=<?= $select_article->id ?>">
+                                <h2><?= $select_article->title ?></h2>
+                                <p>言語：<?= $select_article->genre ?></p>
+                                <p>投稿日：<?= $select_article->created_at ?></p>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php else : ?>
+                <p class="no-lang">まだ<?= $type ?>の記事は投稿されていません</p>
+            <?php endif; ?>
+        </div>
 
         <div class="adsense"></div>
     </main>

@@ -54,6 +54,27 @@ main nav {
         left: -80%;
         transition: all .2s;
     }
+
+    ul.menu {
+        li {
+            a {
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    ul.topic {
+        li {
+            h5 {
+                font-size: 1.4rem;
+                width: 100%;
+                &:hover {
+                    background: #fff;
+                    color: #000;
+                }
+            }
+        }
+    }
 }
 
 #menu:checked ~ .sp-menu {

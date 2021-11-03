@@ -9,9 +9,8 @@
 
 <nav>
     <ul class="menu">
-        <li><a href="./tech.php">技術記事</a></li>
-        <li><a href="./no.php">日常記事</a></li>
-        <!-- <li><a href="./tech.php">問い合わせ</a></li> -->
+        <li><a href="./list.php?type=1">技術記事</a></li>
+        <li><a href="./list.php?type=0">日常記事</a></li>
     </ul>
 
     <ul class="topic">

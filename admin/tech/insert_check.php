@@ -32,6 +32,8 @@ if (isset($post['genre']) && $post['genre'] != "") {
     $errors['genre'] = "ジャンルが入力されていません";
 }
 
+$type = $post["type"];
+
 if (isset($post['markdown']) && $post['markdown'] != "") {
     $markdown = $post['markdown'];
 } else {
@@ -53,11 +55,12 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    $sql = "insert into techarticles (title, genre, markdown) values (?,?,?)";
+    $sql = "insert into techarticles (title, genre, type, markdown) values (?,?,?,?)";
 
     $stmt = $pdo -> prepare($sql);
     $data[] = $title;
     $data[] = $genre;
+    $data[] = $type;
     $data[] = $markdown;
     $stmt -> execute($data);
 

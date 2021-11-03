@@ -4,6 +4,7 @@ class TechArticle {
     public $id = "";
     public $title = "";
     public $genre = "";
+    public $type = "";
     public $markdown = "";
     public $visible = "";
     public $created_at = "";
@@ -14,5 +15,6 @@ class TechArticle {
         $this -> markdown = $item["markdown"];
         $this -> visible = $item["visible"];
         $this -> created_at = $item["created_at"];
+        $this -> type = $item["type"];
     }
 }

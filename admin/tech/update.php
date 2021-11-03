@@ -75,7 +75,13 @@ try {
                 <?php endforeach; ?>
             </select>
         </label>
-        
+        <label for="type">
+            <p>記事のタイプ</p>
+            <select name="type" id="type">
+                <option <?= $article -> type == true ? "selected" : "" ?> value=1>技術</option>
+                <option <?= $article -> type == false ? "selected" : "" ?> value=0>日常</option>
+            </select>
+        </label>
         <span>コードを書く場合は```の後に{ .lang-[言語の拡張子] .prettyprint }と書いてください。</span>
         <p class="err"><?= $errors["markdown"] ?></p>
         <textarea name="markdown" id="mde"><?= htmlspecialchars_decode($article -> markdown) ?></textarea>
