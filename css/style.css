@@ -127,7 +127,7 @@ main {
   height: calc(100% - 89px);
 }
 main nav {
-  position: absolute;
+  position: fixed;
   top: 88px;
   z-index: 0;
   left: 0;
@@ -335,6 +335,24 @@ pre code {
   bottom: 0;
 }
 
+.comment-area {
+  margin-top: 30px;
+  border-top: solid 1px #000;
+}
+.comment-area li {
+  border-top: dashed 1px #000;
+}
+.comment-area li:nth-of-type(1) {
+  border-top: 0;
+}
+.comment-area li .id {
+  font-size: 1.2rem;
+}
+.comment-area li .created_at {
+  text-align: right;
+  font-size: 1.2rem;
+}
+
 @media screen and (max-width: 699px) {
   main#index .container {
     margin: 0;
@@ -491,12 +509,12 @@ main .container ul li div p {
 }
 
 #menu {
-  position: absolute;
+  position: fixed;
   left: -1000000px;
 }
 
 .back {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: -101%;
   width: 100%;
@@ -508,7 +526,7 @@ main .container ul li div p {
 .sp-menu {
   width: 50px;
   height: 70px;
-  position: absolute;
+  position: fixed;
   top: 5px;
   left: 20px;
   z-index: 2;
@@ -541,7 +559,7 @@ main nav {
 }
 @media screen and (max-width: 699px) {
   main nav {
-    position: absolute;
+    position: fixed;
     width: 80%;
     height: 100%;
     top: 0;
@@ -589,7 +607,7 @@ main nav ul.topic li h5:hover {
 }
 
 header {
-  position: absolute;
+  position: fixed;
 }
 header h1 a {
   font-size: 2rem;

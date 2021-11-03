@@ -1,10 +1,10 @@
 #menu {
-    position: absolute;
+    position: fixed;
     left: -1000000px;
 }
 
 .back {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: -101%;
     width: 100%;
@@ -16,7 +16,7 @@
 .sp-menu {
     width: 50px;
     height: 70px;
-    position: absolute;
+    position: fixed;
     top: 5px;
     left: 20px;
     z-index: 2;
@@ -47,7 +47,7 @@
 main nav {
     overflow: hidden;
     @media screen and (max-width: $max-width) {
-        position: absolute;
+        position: fixed;
         width: 80%;
         height: 100%;
         top: 0;

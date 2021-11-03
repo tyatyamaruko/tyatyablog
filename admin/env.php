@@ -13,7 +13,7 @@ if ($_SERVER["SERVER_NAME"] == "localhost") {
 
 
 define("TECH_TABLE", "techarticles");
-define("DAILY_TABLE", "dailyarticles");
+define("COMMENT_TABLE", "comment");
 
 $GENRES = [
     "all",

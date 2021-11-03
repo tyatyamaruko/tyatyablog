@@ -17,7 +17,7 @@ main {
     height: calc(100% - 89px);
     // display: flex;
     nav {
-        position: absolute;
+        position: fixed;
         top: 88px;
         z-index: 0;
         left: 0;
