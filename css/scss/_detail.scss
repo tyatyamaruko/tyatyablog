@@ -42,3 +42,77 @@ main.detail {
 pre code {
     color: #fff;
 }
+
+.comment-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 25%;
+    width: 75px;
+    height: 75px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    @media screen and (max-width: $max-width) {
+        right: 10px;
+        bottom: 10px;
+    }
+    i {
+        color: #fff;
+        font-size: 3rem;
+    }
+}
+
+#comment-check {
+    position: absolute;
+    left: -10000px;
+}
+
+.comment-field {
+    position: fixed;
+    background: rgba($color: #000000, $alpha: .4);
+    width: 100%;
+    height: 100%;
+    bottom: -100%;
+    z-index: 100;
+    transition: all .3s;
+    
+    
+    form {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        margin: 20px auto 0;
+        padding: 30px 0;
+        text-align: center;
+        background: #fff;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        border-top: solid 1px #000;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+
+        > * {
+            width: 95%;
+            font-size: 1.4rem;
+            margin-top: 10px;
+            padding: 5px;
+        }
+
+        textarea {
+            text-align: left;
+        }
+
+        input[type="submit"] {
+            background: #fff;
+            border-radius: 20px;
+        }
+    }
+}
+
+#comment-check:checked ~ .comment-field {
+    bottom: 0;
+}

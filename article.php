@@ -75,8 +75,29 @@ try {
             </div>
             <?= htmlspecialchars_decode($markdown) ?>
         </div>
+
+        <label class="comment-btn" for="comment-check">
+            <i class="fas fa-comment"></i>
+        </label>
     </main>
 
+    <input type="checkbox" id="comment-check">
+
+    <label class="comment-field" for="comment-check">
+        <form action="./comment-post.php" method="post">
+            <input type="hidden" name="articleId" value="<?= $id ?>">
+            <input type="text" name="username" placeholder="表示用の名前を入力してください">
+            <textarea name="comment" id="mde"></textarea>
+            <input type="submit" value="投稿">
+            <label for="comment-check">閉じる</label>
+        </form>
+    </label>
+
+    <script>
+        const mde = new SimpleMDE({
+            element: document.getElementById("mde")
+        });
+    </script>
 
 </body>
 
