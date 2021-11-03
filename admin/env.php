@@ -16,6 +16,7 @@ define("TECH_TABLE", "techarticles");
 define("DAILY_TABLE", "dailyarticles");
 
 $GENRES = [
+    "all",
     "html",
     "css",
     "javascript",

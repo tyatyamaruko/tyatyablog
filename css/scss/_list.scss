@@ -10,8 +10,17 @@ main#list {
     }
 
     .contents {
+        text-align: center;
+        select {
+            width: 60%;
+            font-size: 1.7rem;
+            text-align: right;
+            margin: 20px auto 0;
+        }
+
         ul {
             padding: 20px 30px;
+            text-align: left;
             li {
                 border-bottom: dashed 1px #000;
             }

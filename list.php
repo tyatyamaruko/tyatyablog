@@ -1,11 +1,12 @@
 <?php
-if (isset($_GET["type"]) && $_GET["type"] != "") {
+if ((isset($_GET["type"]) && $_GET["type"] != "") || (isset($_GET["genre"]) && $_GET["genre"] != "")) {
     $type = $_GET["type"];
+    $selectedGenre = $_GET['genre'];
 } else {
     header("Location: index.php");
     exit;
 }
-
+var_dump($selectedGenre);
 require_once "./models/tech-article.php";
 require_once "./admin/env.php";
 
@@ -15,10 +16,18 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    $sql = "select * from techarticles where type=? order by created_at desc";
+    if ($selectedGenre !== "all") {
+        $sql = "select * from techarticles where type=? and genre=? order by created_at desc";
+    } else {
+        $sql = "select * from techarticles where type=? order by created_at desc";
+    }
+    // $sql = "select * from techarticles where type=? and genre=? order by created_at desc";
 
     $stmt = $pdo->prepare($sql);
     $data[] = $type;
+    if ($selectedGenre != "all") {
+        $data[] = $selectedGenre;
+    }
     $stmt->execute($data);
 
     $select_articles = [];
@@ -35,6 +44,7 @@ try {
     header('Content-Type: text/plain; charset=UTF-8', true, 500);
     exit($e->getMessage());
 }
+ var_dump($sql);
 
 
 // sidemenu用
@@ -69,13 +79,17 @@ try {
 
         <div class="contents">
             <?php if ($type == 1) : ?>
-                <select name="genre" id="genre">
-                    <?php foreach ($GENRES as $i => $genre) : ?>
-                        <?php if($i != Count($GENRES) - 1) : ?>
-                        <option value="<?= $genre ?>"><?= $genre ?></option>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-                </select>
+                <form action="./list.php" method="get">
+                    <input type="hidden" name="type" value=1>
+                    <select name="genre" id="genre">
+                        <?php foreach ($GENRES as $i => $genre) : ?>
+                            <?php if ($i != Count($GENRES) - 1) : ?>
+                                <option <?= $genre == $selectedGenre ? "selected" : "" ?> value="<?= $genre ?>"><?= $genre ?></option>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </select>
+                    <input type="submit" value="検索">
+                </form>
             <?php endif; ?>
 
             <?php if (count($select_articles)) : ?>
@@ -91,11 +105,12 @@ try {
                     <?php endforeach; ?>
                 </ul>
             <?php else : ?>
-                <p class="no-lang">まだ<?= $type ?>の記事は投稿されていません</p>
+                <p class="no-lang">まだ記事は投稿されていません</p>
             <?php endif; ?>
         </div>
 
         <div class="adsense"></div>
+        
     </main>
 </body>
 

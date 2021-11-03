@@ -45,6 +45,7 @@
 }
 
 main nav {
+    overflow: hidden;
     @media screen and (max-width: $max-width) {
         position: absolute;
         width: 80%;

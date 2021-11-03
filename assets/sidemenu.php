@@ -9,7 +9,7 @@
 
 <nav>
     <ul class="menu">
-        <li><a href="./list.php?type=1">技術記事</a></li>
+        <li><a href="./list.php?type=1&genre=all">技術記事</a></li>
         <li><a href="./list.php?type=0">日常記事</a></li>
     </ul>
 

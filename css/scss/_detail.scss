@@ -21,6 +21,7 @@ main.detail {
         margin-top: 30px;
         padding-left: 30px;
         border-left: solid 8px #000;
+        margin-bottom: 10px;
 
         @media screen and (max-width: $max-width) {
             font-size: 1.7rem;
