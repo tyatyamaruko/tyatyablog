@@ -1,0 +1,19 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    tr {
+        th {
+            background: #eee;
+            font-size: 1.5rem;
+            text-align: left;
+            padding: 5px;
+            border: solid 1px #000;
+        }
+
+        td {
+            font-size: 1.5rem;
+            padding: 5px;
+            border: solid 1px #000;
+        }
+    }
+}

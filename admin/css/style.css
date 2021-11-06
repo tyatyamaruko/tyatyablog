@@ -197,4 +197,21 @@ main.detail .point {
   padding: 3px;
   border-radius: 5px;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table tr th {
+  background: #eee;
+  font-size: 1.5rem;
+  text-align: left;
+  padding: 5px;
+  border: solid 1px #000;
+}
+table tr td {
+  font-size: 1.5rem;
+  padding: 5px;
+  border: solid 1px #000;
+}
 /*# sourceMappingURL=style.css.map */
