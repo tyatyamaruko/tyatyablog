@@ -8,6 +8,8 @@
     font-weight: normal;
 }
 
+main li {list-style-type: disc;}
+
 body {
     height: 100vh;
     width: 100vw;
