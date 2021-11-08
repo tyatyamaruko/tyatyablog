@@ -207,8 +207,12 @@ h2 {
   font-size: 1.8rem;
 }
 
-p {
-  font-size: 1.5rem;
+p, a {
+  font-size: 1.3rem;
+}
+
+a {
+  color: #259bda;
 }
 
 pre {
@@ -634,5 +638,6 @@ header {
 }
 header h1 a {
   font-size: 2rem;
+  color: #000;
 }
 /*# sourceMappingURL=style.css.map */

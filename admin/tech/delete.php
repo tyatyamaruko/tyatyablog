@@ -19,6 +19,7 @@ try {
     $stmt = $pdo->prepare($sql);
     $data[] = $id;
     $stmt->execute($data);
+
 } catch (PDOException $e) {
     header('Content-Type: text/plain; charset=UTF-8', true, 500);
     exit($e->getMessage());
