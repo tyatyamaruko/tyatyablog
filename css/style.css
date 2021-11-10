@@ -28,7 +28,7 @@ pre.prettyprint {
   background: #000000;
   font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
   border: 0 !important;
-  overflow: scroll;
+  overflow-x: scroll;
   /* Specify class=linenums on a pre to get line numbering */
 }
 pre.prettyprint .pln {
