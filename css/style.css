@@ -210,6 +210,8 @@ h2 {
 
 p, a {
   font-size: 1.3rem;
+  text-align: justify;
+  text-justify: inter-ideograph;
 }
 
 a {
@@ -254,6 +256,9 @@ main.detail h1 {
   main.detail h1 {
     font-size: 1.7rem;
   }
+}
+main.detail div.content pre {
+  margin: 20px 0;
 }
 main.detail div.content pre code span {
   word-wrap: break-word;
