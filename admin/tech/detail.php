@@ -61,7 +61,6 @@ $markdown = $markdownConverter->parse($article->markdown);
     <link rel="stylesheet" href="../../js/prism.css">
     <script src="../../js/prism.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
     <title>ちゃちゃブログ｜<?= $article->title ?></title>
 </head>
 
