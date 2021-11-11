@@ -59,6 +59,7 @@ try {
 }
 
 $markdownConverter = new MarkdownExtra();
+$markdownConverter -> enableNewLines = true;
 $markdown = $markdownConverter->parse($article->markdown);
 
 
