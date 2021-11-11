@@ -51,7 +51,7 @@ $_SESSION["error"] = array();
                 <option value=0>日常</option>
             </select>
         </label>
-        <span>コードを書く場合は```の後に{ .lang-[言語の拡張子] .prettyprint }と書いてください。また、コード群と文字の間に一行改行を入れてください。</span>
+        <span>コードを書く場合は```の後に{ .language-[言語の拡張子] }と書いてください。また、コード群と文字の間に一行改行を入れてください。</span>
         <p class="err"><?= $errors["markdown"] ?></p>
         <textarea name="markdown" id="mde"></textarea>
 

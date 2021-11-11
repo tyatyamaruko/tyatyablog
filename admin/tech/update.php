@@ -82,7 +82,7 @@ try {
                 <option <?= $article -> type == false ? "selected" : "" ?> value=0>日常</option>
             </select>
         </label>
-        <span>コードを書く場合は```の後に{ .lang-[言語の拡張子] .prettyprint }と書いてください。</span>
+        <span>コードを書く場合は```の後に{ .language-[言語の拡張子] }と書いてください。</span>
         <p class="err"><?= $errors["markdown"] ?></p>
         <textarea name="markdown" id="mde"><?= htmlspecialchars_decode($article -> markdown) ?></textarea>
 
