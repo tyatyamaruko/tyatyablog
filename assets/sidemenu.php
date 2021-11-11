@@ -17,11 +17,11 @@
         <li>
             <h5>最新記事</h5>
         </li>
-        <?php foreach ($articles as $article) : ?>
+        <?php foreach ($articles as $item) : ?>
             <li>
-                <a href="./article.php?id=<?= $article->id ?>">
-                    <p class="title"><?= $article->title ?></p>
-                    <p class="date"><?= $article->created_at ?></p>
+                <a href="./article.php?id=<?= $item->id ?>">
+                    <p class="title"><?= $item->title ?></p>
+                    <p class="date"><?= $item->created_at ?></p>
                 </a>
             </li>
         <?php endforeach; ?>
