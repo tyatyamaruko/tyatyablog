@@ -32,6 +32,7 @@ if (isset($id) && isset($password)) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
     <title>ログイン画面</title>
 </head>
 
@@ -39,20 +40,20 @@ if (isset($id) && isset($password)) {
     <div class="error">
         <?= isset($isError) && $isError == true ? "IDまたはPasswordが間違っています" : "" ?>
     </div>
-    <form method="post">
-        <ul>
-            <li>
-                <p>ID</p>
-                <input type="text" name="id">
-            </li>
-            <li>
-                <p>PASSWORD</p>
-                <input type="text" name="password">
-            </li>
-            <li>
-                <input type="submit" value="ログイン">
-            </li>
-        </ul>
+    <form class="login-form" method="post">
+        <table>
+            <tr>
+                <th>ID</th>
+                <td><input type="text" name="id" id=""></td>
+            </tr>
+            <tr>
+                <th>PASSWORD</th>
+                <td><input type="password" name="password" id=""></td>
+            </tr>
+            <tr>
+                <td class="login-btn" colspan="2"><input type="submit" value="LOG IN"></td>
+            </tr>
+        </table>
     </form>
 </body>
 

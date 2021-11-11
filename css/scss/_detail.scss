@@ -38,10 +38,18 @@ main.detail {
             }
         }
     }
+
+    ul 
+    {
+        margin: 20px 0;
+    }
 }
 
 pre code {
     color: #fff;
+    span {
+        color: #fff;
+    }
 }
 
 .comment-btn {

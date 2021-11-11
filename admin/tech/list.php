@@ -45,8 +45,7 @@ try {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <title>管理画面</title>
 </head>
@@ -54,9 +53,9 @@ try {
 <body>
     <?php @include("./assets/header.php"); ?>
     <main>
-        <ul>
+        <ul class="article-list">
             <?php foreach ($articles as $article) : ?>
-                <li>
+                <li class="article-list__item">
                     <a href="./detail.php?id=<?= $article->id ?>">
                         <h2><?= $article->title ?></h2>
                         <p><?= $article->genre ?></p>

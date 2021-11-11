@@ -263,8 +263,14 @@ main.detail div.content pre {
 main.detail div.content pre code span {
   word-wrap: break-word;
 }
+main.detail ul {
+  margin: 20px 0;
+}
 
 pre code {
+  color: #fff;
+}
+pre code span {
   color: #fff;
 }
 
@@ -539,6 +545,128 @@ table tr td {
   font-size: 1.5rem;
   padding: 5px;
   border: solid 1px #000;
+}
+
+.conf-delete {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+}
+.conf-delete .screen {
+  background: #fff;
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+  margin-top: calc(10%);
+  padding: 30px 10px;
+}
+.conf-delete .screen h2 {
+  margin-top: 50px;
+  font-size: 2rem;
+  text-align: center;
+  color: red;
+}
+.conf-delete .screen p {
+  text-align: center;
+}
+.conf-delete .screen .button {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  top: 40px;
+}
+.conf-delete .screen .button a {
+  color: #fff;
+  border-radius: 15px;
+  width: 30%;
+  text-align: center;
+  padding: 10px 0;
+}
+.conf-delete .screen .button .yes {
+  background: #f00;
+}
+.conf-delete .screen .button .no {
+  background: #0091ff;
+  cursor: pointer;
+}
+
+.login-form {
+  width: 40%;
+  margin: 100px auto;
+}
+.login-form table td {
+  padding: 5px 10px;
+}
+.login-form table td input {
+  width: 100%;
+  font-size: 2rem;
+}
+
+.article-list {
+  width: 40%;
+  margin: 150px auto;
+}
+.article-list__item {
+  border: solid 1px #000;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  padding: 5px 10px;
+}
+
+.article-form {
+  width: 90%;
+  margin: 100px auto;
+}
+.article-form__error {
+  color: red;
+}
+.article-form__input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+}
+.article-form__input p {
+  font-size: 1.8rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.article-form__input input {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  font-size: 1.8rem;
+}
+.article-form__input select {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  font-size: 1.8rem;
+}
+
+.btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.btn__back-btn {
+  font-size: 1.8rem;
+  padding: 5px 10px;
+}
+.btn__post-btn input {
+  font-size: 1.8rem;
+  padding: 5px 10px;
 }
 
 #menu {

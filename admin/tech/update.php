@@ -61,30 +61,38 @@ try {
 <body>
     <form action="update_check.php" method="post">
         <input type="hidden" name="id" value="<?= $id ?>">
-        <p class="err"><?= $errors["title"] ?></p>
-        <label for="title">
-            <p>タイトル(64文字まで)</p>
-            <input type="text" name="title" id="title" value="<?= $article -> title ?>">
-        </label>
-        <p class="err"><?= $errors["genre"] ?></p>
-        <label for="genre">
-            <p>ジャンル</p>
-            <select name="genre" id="genre">
-                <?php foreach ($GENRES as $genre): ?>
-                    <option value="<?= $genre ?>" <?= $genre == $article->genre ? "selected" : "" ?>><?= $genre ?></option>
-                <?php endforeach; ?>
-            </select>
-        </label>
-        <label for="type">
-            <p>記事のタイプ</p>
-            <select name="type" id="type">
-                <option <?= $article -> type == true ? "selected" : "" ?> value=1>技術</option>
-                <option <?= $article -> type == false ? "selected" : "" ?> value=0>日常</option>
-            </select>
-        </label>
-        <span>コードを書く場合は```の後に{ .language-[言語の拡張子] }と書いてください。</span>
-        <p class="err"><?= $errors["markdown"] ?></p>
-        <textarea name="markdown" id="mde"><?= htmlspecialchars_decode($article -> markdown) ?></textarea>
+        <ul>
+            <li class="article-form__error">
+                <?= $errors["title"] ?>
+            </li>
+            <li class="article-form__input">
+                <p>タイトル(64文字まで)</p>
+                <input type="text" name="title" id="title" value="<?= $article->title ?>">
+            </li>
+            <li class="article-form__error">
+                <?= $errors["genre"] ?>
+            </li>
+            <li class="article-form__input">
+                <p>ジャンル</p>
+                <select name="genre" id="genre">
+                    <?php foreach ($GENRES as $genre) : ?>
+                        <option value="<?= $genre ?>" <?= $genre == $article->genre ? "selected" : "" ?>><?= $genre ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </li>
+            <li class="article-form__input">
+                <p>記事のタイプ</p>
+                <select name="type" id="type">
+                    <option <?= $article->type == true ? "selected" : "" ?> value=1>技術</option>
+                    <option <?= $article->type == false ? "selected" : "" ?> value=0>日常</option>
+                </select>
+            </li>
+            <li class="article-form__main">
+                <span>コードを書く場合は```の後に{ .language-[言語の拡張子] }と書いてください。また、コード群と文字の間に一行改行を入れてください。</span>
+                <p class="err"><?= $errors["markdown"] ?></p>
+                <textarea name="markdown" id="mde"><?= htmlspecialchars_decode($article->markdown) ?></textarea>
+            </li>
+        </ul>
 
         <div class="btn">
             <div class="back-btn">

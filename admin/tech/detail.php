@@ -56,9 +56,10 @@ $markdown = $markdownConverter->parse($article->markdown);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="../../js/prism.css">
+    <script src="../../js/prism.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
     <title>ちゃちゃブログ｜<?= $article->title ?></title>
@@ -99,30 +100,30 @@ $markdown = $markdownConverter->parse($article->markdown);
     </main>
 
     <script>
-        $(function() {
-            let pre = $("pre");
-            pre.addClass("prettyprint");
-            pre.addClass("prettyprinted");
-            let code = $("code");
-            code.addClass("prettyprint");
-            code.addClass("prettyprinted");
+        // $(function() {
+        //     let pre = $("pre");
+        //     pre.addClass("prettyprint");
+        //     pre.addClass("prettyprinted");
+        //     let code = $("code");
+        //     code.addClass("prettyprint");
+        //     code.addClass("prettyprinted");
 
-            $(".delete").on("click", function() {
-                $(".conf-delete").css("display", "block");
-            });
+        //     $(".delete").on("click", function() {
+        //         $(".conf-delete").css("display", "block");
+        //     });
 
-            $(".conf-delete").on("click", function() {
-                $(this).css("display", "none");
-            });
+        //     $(".conf-delete").on("click", function() {
+        //         $(this).css("display", "none");
+        //     });
 
-            $(".no").on("click", function() {
-                $(".conf-delete").css("display", "none");
-            });
-        });
+        //     $(".no").on("click", function() {
+        //         $(".conf-delete").css("display", "none");
+        //     });
+        // });
 
-        window.addEventListener("load", function(event) {
-            PR.prettyPrint()
-        });
+        // window.addEventListener("load", function(event) {
+        //     PR.prettyPrint()
+        // });
     </script>
 </body>
 

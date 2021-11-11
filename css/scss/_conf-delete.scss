@@ -1,0 +1,50 @@
+.conf-delete {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba($color: #000000, $alpha: .4);
+
+    .screen {
+        background: #fff;
+        width: 50%;
+        height: 50%;
+        margin: 0 auto;
+        margin-top: calc(10%);
+        padding: 30px 10px;
+
+        h2 {
+            margin-top: 50px;
+            font-size: 2rem;
+            text-align: center;
+            color: red;
+        }
+        p {
+            text-align: center;
+        }
+        .button {
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            top: 40px;
+
+            a {
+                color: #fff;
+                border-radius: 15px;
+                width: 30%;
+                text-align: center;
+                padding: 10px 0;
+            }
+            .yes {
+                background: #f00;
+            }
+            .no {
+                background: rgb(0, 145, 255);
+                cursor: pointer;
+            }
+
+        }
+    }
+}

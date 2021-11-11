@@ -1,0 +1,41 @@
+.article-form {
+    width: 90%;
+    margin: 100px auto;
+
+    &__error {
+        color: red;
+    }
+
+    &__input {
+        display: flex;
+        margin-bottom: 20px;
+        p {
+            font-size: 1.8rem;
+            flex: 1;
+        }
+        input {
+            flex: 3;
+            font-size: 1.8rem;
+        }
+        select {
+            flex: 3;
+            font-size: 1.8rem;
+        }
+    }
+}
+
+.btn {
+    display: flex;
+    justify-content: space-between;
+    &__back-btn {
+        font-size: 1.8rem;
+        padding: 5px 10px;
+    }
+
+    &__post-btn {
+        input {
+            font-size: 1.8rem;
+            padding: 5px 10px;
+        }
+    }
+}
