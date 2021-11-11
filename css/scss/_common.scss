@@ -49,9 +49,8 @@ main {
         }
 
         .topic {
-            margin-top: 50px;
             li {
-                padding-left: 20px;
+                padding: 5px 20px;
                 border-bottom: dashed 1px #000;
 
                 &:hover {

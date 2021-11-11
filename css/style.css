@@ -161,11 +161,8 @@ main nav .menu li:hover {
 main nav .menu li:hover a {
   color: #fff;
 }
-main nav .topic {
-  margin-top: 50px;
-}
 main nav .topic li {
-  padding-left: 20px;
+  padding: 5px 20px;
   border-bottom: dashed 1px #000;
 }
 main nav .topic li:hover {
@@ -732,6 +729,10 @@ main nav {
 }
 main nav ul.menu li a {
   font-size: 1.4rem;
+}
+main nav h5.g-nav__header {
+  margin-top: 50px;
+  margin-left: 20px;
 }
 main nav ul.topic li h5 {
   font-size: 1.4rem;

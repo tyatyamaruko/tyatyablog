@@ -7,18 +7,16 @@
 
 <label for="menu" class="back"></label>
 
-<nav>
+<nav class="g-nav">
     <ul class="menu">
         <li><a href="./list.php?type=1&genre=all">技術記事</a></li>
         <li><a href="./list.php?type=0">日常記事</a></li>
     </ul>
 
+    <h5 class="g-nav__header">最新記事</h5>
     <ul class="topic">
-        <li>
-            <h5>最新記事</h5>
-        </li>
         <?php foreach ($articles as $item) : ?>
-            <li>
+            <li class="topic_item">
                 <a href="./article.php?id=<?= $item->id ?>">
                     <p class="title"><?= $item->title ?></p>
                     <p class="date"><?= $item->created_at ?></p>
