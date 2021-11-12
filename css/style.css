@@ -605,6 +605,20 @@ table tr td {
   width: 100%;
   font-size: 2rem;
 }
+@media screen and (max-width: 699px) {
+  .login-form {
+    width: 90%;
+  }
+  .login-form table tr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 
 .article-list {
   width: 40%;
@@ -664,6 +678,20 @@ table tr td {
 .btn__post-btn input {
   font-size: 1.8rem;
   padding: 5px 10px;
+}
+
+.admin-side-menu li {
+  text-align: center;
+  margin-top: 60px;
+  padding: 20px 10px;
+}
+.admin-side-menu li:hover {
+  background: #000;
+}
+.admin-side-menu li p {
+  cursor: pointer;
+  color: red;
+  text-align: center;
 }
 
 #menu {

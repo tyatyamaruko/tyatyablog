@@ -10,4 +10,14 @@
             }
         }
     }
+
+    @media screen and (max-width: $max-width) {
+        width: 90%;
+        table {
+            tr {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
 }

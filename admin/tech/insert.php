@@ -44,7 +44,9 @@ $_SESSION["error"] = array();
                 <p>ジャンル</p>
                 <select name="genre" id="genre">
                     <?php foreach ($GENRES as $genre) : ?>
-                        <option value="<?= $genre ?>"><?= $genre ?></option>
+                        <?php if ($genre != "all") : ?>
+                            <option value="<?= $genre ?>"><?= $genre ?></option>
+                        <?php endif; ?>
                     <?php endforeach; ?>
                 </select>
             </li>

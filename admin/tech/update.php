@@ -61,6 +61,7 @@ try {
 <body>
     <form action="update_check.php" method="post">
         <input type="hidden" name="id" value="<?= $id ?>">
+        <input type="hidden" name="created_at" value="<?= $article->created_at ?>">
         <ul>
             <li class="article-form__error">
                 <?= $errors["title"] ?>
@@ -76,7 +77,9 @@ try {
                 <p>ジャンル</p>
                 <select name="genre" id="genre">
                     <?php foreach ($GENRES as $genre) : ?>
-                        <option value="<?= $genre ?>" <?= $genre == $article->genre ? "selected" : "" ?>><?= $genre ?></option>
+                        <?php if ($genre != "all") : ?>
+                            <option value="<?= $genre ?>" <?= $genre == $article->genre ? "selected" : "" ?>><?= $genre ?></option>
+                        <?php endif; ?>
                     <?php endforeach; ?>
                 </select>
             </li>

@@ -1,0 +1,17 @@
+.admin-side-menu {
+    li {
+        text-align: center;
+        margin-top: 60px;
+        padding: 20px 10px;
+
+        &:hover {
+            background: #000;
+        }
+
+        p {
+            cursor: pointer;
+            color: red;
+            text-align: center;
+        }
+    }
+}

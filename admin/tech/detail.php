@@ -5,6 +5,7 @@ session_regenerate_id(true);
 
 use cebe\markdown\MarkdownExtra;
 
+
 require_once "../../vendor/autoload.php";
 require("../env.php");
 require("../../models/tech-article.php");
@@ -44,6 +45,7 @@ try {
 }
 
 $markdownConverter = new MarkdownExtra();
+$markdownConverter->enableNewlines = true;
 $markdown = $markdownConverter->parse($article->markdown);
 
 ?>
@@ -67,7 +69,7 @@ $markdown = $markdownConverter->parse($article->markdown);
 <body>
     <?php @include("./assets/header.php"); ?>
     <main class="detail">
-        <nav>
+        <nav class="admin-side-menu">
             <ul>
                 <li><a href="./update.php?id=<?= $id ?>">編集する</a></li>
                 <li class="delete">
@@ -99,30 +101,20 @@ $markdown = $markdownConverter->parse($article->markdown);
     </main>
 
     <script>
-        // $(function() {
-        //     let pre = $("pre");
-        //     pre.addClass("prettyprint");
-        //     pre.addClass("prettyprinted");
-        //     let code = $("code");
-        //     code.addClass("prettyprint");
-        //     code.addClass("prettyprinted");
+        $(function() {
 
-        //     $(".delete").on("click", function() {
-        //         $(".conf-delete").css("display", "block");
-        //     });
+            $(".delete").on("click", function() {
+                $(".conf-delete").css("display", "block");
+            });
 
-        //     $(".conf-delete").on("click", function() {
-        //         $(this).css("display", "none");
-        //     });
+            $(".conf-delete").on("click", function() {
+                $(this).css("display", "none");
+            });
 
-        //     $(".no").on("click", function() {
-        //         $(".conf-delete").css("display", "none");
-        //     });
-        // });
-
-        // window.addEventListener("load", function(event) {
-        //     PR.prettyPrint()
-        // });
+            $(".no").on("click", function() {
+                $(".conf-delete").css("display", "none");
+            });
+        });
     </script>
 </body>
 

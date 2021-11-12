@@ -20,6 +20,8 @@ if (isset($_POST["id"])) {
     exit("記事のIDが指定されていません。IDを指定してください");
 }
 
+$createdAt = $_POST["created_at"];
+
 if (isset($post['title']) && $post['title'] != "") {
     $title = $post['title'];
     if (mb_strlen($title) > 64) {
@@ -59,13 +61,14 @@ try {
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "update " . TECH_TABLE . " set title=?, genre=?, type=?, markdown=? where id=?";
+    $sql = "update " . TECH_TABLE . " set title=?, genre=?, type=?, markdown=?, created_at=? where id=?";
 
     $stmt = $pdo -> prepare($sql);
     $data[] = $title;
     $data[] = $genre;
     $data[] = $type;
     $data[] = $markdown;
+    $data[] = $createdAt;
     $data[] = $id;
     $stmt -> execute($data);
 
