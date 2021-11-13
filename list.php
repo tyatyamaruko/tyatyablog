@@ -44,7 +44,7 @@ try {
     header('Content-Type: text/plain; charset=UTF-8', true, 500);
     exit($e->getMessage());
 }
- var_dump($sql);
+var_dump($sql);
 
 
 // sidemenu用
@@ -93,13 +93,18 @@ try {
             <?php endif; ?>
 
             <?php if (count($select_articles)) : ?>
-                <ul>
+                <ul class="user-article">
                     <?php foreach ($select_articles as $select_article) : ?>
-                        <li>
+                        <li class="user-article__item">
                             <a href="./article.php?id=<?= $select_article->id ?>">
-                                <h2><?= $select_article->title ?></h2>
-                                <p>言語：<?= $select_article->genre ?></p>
-                                <p>投稿日：<?= $select_article->created_at ?></p>
+                                <span class="user-article__icon">
+                                    <?= $select_article->getGenreImage(); ?>
+                                </span>
+                                <div>
+                                    <h2><?= $select_article->title ?></h2>
+                                    <p>ジャンル：<?= $select_article->genre ?></p>
+                                    <p>投稿日：<?= $select_article->created_at ?></p>
+                                </div>
                             </a>
                         </li>
                     <?php endforeach; ?>
@@ -110,7 +115,7 @@ try {
         </div>
 
         <div class="adsense"></div>
-        
+
     </main>
 </body>
 

@@ -1,0 +1,22 @@
+.user-article {
+    &__item {
+        margin-top: 20px;
+
+        a {
+           display: flex;
+        }
+    }
+
+    &__icon {
+        display: inline-block;
+        width: 100px;
+        i {
+            font-size: 100px;
+        }
+    }
+
+    > div {
+        padding-left: 20px;
+        flex: 1;
+    }
+}

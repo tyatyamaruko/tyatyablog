@@ -23,6 +23,27 @@ main .content ul li {
   }
 }
 
+.html {
+  color: #EB6226;
+}
+
+.css {
+  color: #3996D1;
+}
+
+.js {
+  color: #EDD71C;
+}
+
+.php {
+  font-size: 70px !important;
+  color: #838CBA;
+}
+
+.swift {
+  color: #F64128;
+}
+
 /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
 pre.prettyprint {
   background: #000000;
@@ -630,6 +651,11 @@ table tr td {
   margin-bottom: 30px;
   padding: 5px 10px;
 }
+@media screen and (max-width: 699px) {
+  .article-list {
+    width: 90%;
+  }
+}
 
 .article-form {
   width: 90%;
@@ -692,6 +718,28 @@ table tr td {
   cursor: pointer;
   color: red;
   text-align: center;
+}
+
+.user-article__item {
+  margin-top: 20px;
+}
+.user-article__item a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.user-article__icon {
+  display: inline-block;
+  width: 100px;
+}
+.user-article__icon i {
+  font-size: 100px;
+}
+.user-article > div {
+  padding-left: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 #menu {

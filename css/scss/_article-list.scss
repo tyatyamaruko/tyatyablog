@@ -8,4 +8,8 @@
         margin-bottom: 30px;
         padding: 5px 10px;
     }
+
+    @media screen and (max-width: $max-width) {
+        width: 90%;
+    }
 }
