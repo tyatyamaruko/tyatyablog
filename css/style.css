@@ -35,13 +35,17 @@ main .content ul li {
   color: #EDD71C;
 }
 
-.php {
+.php-img {
   font-size: 70px !important;
   color: #838CBA;
 }
 
 .swift {
   color: #F64128;
+}
+
+.other-img {
+  font-size: 70px !important;
 }
 
 /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */

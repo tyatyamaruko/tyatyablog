@@ -59,7 +59,7 @@ try {
                     <a href="./detail.php?id=<?= $article->id ?>">
                         <h2><?= $article->title ?></h2>
                         <p><?= $article->genre ?></p>
-                        <p>投稿日：<?= $article->created_at ?></p>
+                        <p>投稿日：<?= $article->getCreatedAt() ?></p>
                     </a>
                 </li>
             <?php endforeach; ?>

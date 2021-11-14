@@ -103,7 +103,7 @@ try {
                                 <div>
                                     <h2><?= $select_article->title ?></h2>
                                     <p>ジャンル：<?= $select_article->genre ?></p>
-                                    <p>投稿日：<?= $select_article->created_at ?></p>
+                                    <p>投稿日：<?= $select_article->getCreatedAt() ?></p>
                                 </div>
                             </a>
                         </li>

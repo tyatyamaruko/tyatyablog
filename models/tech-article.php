@@ -16,8 +16,12 @@ class TechArticle
         $this->genre = $item["genre"];
         $this->markdown = $item["markdown"];
         $this->visible = $item["visible"];
-        $this->created_at = substr($item["created_at"], 0, 10);
+        $this->created_at = $item["created_at"];
         $this->type = $item["type"];
+    }
+
+    public function getCreatedAt() {
+        return substr($this -> created_at, 0, 10);
     }
 
     public function getGenreImage()
@@ -33,7 +37,7 @@ class TechArticle
                 return '<i class="fab fa-js js"></i>';
                 break;
             case 'php':
-                return "<i class='fab fa-php php'></i>";
+                return "<i class='fab fa-php php-img'></i>";
                 break;
             case 'swift':
                 return '<i class="fab fa-swift swift"></i>';
@@ -45,7 +49,7 @@ class TechArticle
                 return '<i class="fab fa-chrome web"></i>';
                 break;
             case 'other':
-                return '<i class="fas fa-laptop-code other"></i>';
+                return '<i class="fas fa-laptop-code other-img"></i>';
                 break;
             default:
                 return '<i class="fas fa-bible" life></i>';
