@@ -14,10 +14,10 @@
 }
 
 .sp-menu {
-    width: 50px;
-    height: 70px;
+    width: 55px;
+    height: 55px;
     position: fixed;
-    top: 5px;
+    top: 0px;
     left: 20px;
     z-index: 2;
     transition: all .2s;
@@ -33,13 +33,13 @@
         transition: all .2s;
 
         &:nth-of-type(1) {
-            top: 20px;
+            top: 10px;
         }
         &:nth-of-type(2) {
-            top: 35px;
+            top: 25px;
         }
         &:nth-of-type(3) {
-            top: 50px;
+            top: 40px;
         }
     }
 }
@@ -48,7 +48,7 @@ main nav {
     overflow: hidden;
     @media screen and (max-width: $max-width) {
         position: fixed;
-        width: 80%;
+        width: 87%;
         height: 100%;
         top: 0;
         z-index: 2;
@@ -84,10 +84,10 @@ main nav {
 }
 
 #menu:checked ~ .sp-menu {
-    left: 84%;
+    left: 88%;
 
     span:nth-of-type(1) {
-        top: 35px;
+        top: 25px;
         transform: rotate(45deg);
     }
     span:nth-of-type(2) {
@@ -95,7 +95,7 @@ main nav {
     }
     span:nth-of-type(3) {
         transform: rotate(-45deg);
-        top: 35px;
+        top: 25px;
     }
 }
 #menu:checked ~ .back {

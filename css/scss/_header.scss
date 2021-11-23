@@ -6,4 +6,11 @@ header {
             color: #000;
         }
     }
+
+    @media screen and (max-width: $max-width) {
+        height: 55px;
+        h1 {
+            line-height: 55px;
+        }
+    }
 }

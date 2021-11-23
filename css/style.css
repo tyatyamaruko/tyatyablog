@@ -154,6 +154,11 @@ header h1 {
   font-weight: bold;
   text-align: center;
 }
+@media screen and (max-width: 699px) {
+  header h1 {
+    padding: 0;
+  }
+}
 
 main {
   height: calc(100% - 89px);
@@ -234,6 +239,10 @@ p, a {
   font-size: 1.3rem;
   text-align: justify;
   text-justify: inter-ideograph;
+}
+
+p {
+  line-height: 2.2;
 }
 
 a {
@@ -762,10 +771,10 @@ table tr td {
 }
 
 .sp-menu {
-  width: 50px;
-  height: 70px;
+  width: 55px;
+  height: 55px;
   position: fixed;
-  top: 5px;
+  top: 0px;
   left: 20px;
   z-index: 2;
   -webkit-transition: all 0.2s;
@@ -783,13 +792,13 @@ table tr td {
   transition: all 0.2s;
 }
 .sp-menu span:nth-of-type(1) {
-  top: 20px;
+  top: 10px;
 }
 .sp-menu span:nth-of-type(2) {
-  top: 35px;
+  top: 25px;
 }
 .sp-menu span:nth-of-type(3) {
-  top: 50px;
+  top: 40px;
 }
 
 main nav {
@@ -798,7 +807,7 @@ main nav {
 @media screen and (max-width: 699px) {
   main nav {
     position: fixed;
-    width: 80%;
+    width: 87%;
     height: 100%;
     top: 0;
     z-index: 2;
@@ -824,10 +833,10 @@ main nav ul.topic li h5:hover {
 }
 
 #menu:checked ~ .sp-menu {
-  left: 84%;
+  left: 88%;
 }
 #menu:checked ~ .sp-menu span:nth-of-type(1) {
-  top: 35px;
+  top: 25px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
@@ -837,7 +846,7 @@ main nav ul.topic li h5:hover {
 #menu:checked ~ .sp-menu span:nth-of-type(3) {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
-  top: 35px;
+  top: 25px;
 }
 
 #menu:checked ~ .back {
@@ -854,5 +863,13 @@ header {
 header h1 a {
   font-size: 2rem;
   color: #000;
+}
+@media screen and (max-width: 699px) {
+  header {
+    height: 55px;
+  }
+  header h1 {
+    line-height: 55px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

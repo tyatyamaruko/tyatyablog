@@ -1,4 +1,7 @@
 <?php
+require_once "./models/tech-article.php";
+require_once "./admin/env.php";
+
 if ((isset($_GET["type"]) && $_GET["type"] != "") || (isset($_GET["genre"]) && $_GET["genre"] != "")) {
     $type = $_GET["type"];
     $selectedGenre = $_GET['genre'];
@@ -6,9 +9,6 @@ if ((isset($_GET["type"]) && $_GET["type"] != "") || (isset($_GET["genre"]) && $
     header("Location: index.php");
     exit;
 }
-var_dump($selectedGenre);
-require_once "./models/tech-article.php";
-require_once "./admin/env.php";
 
 try {
     $pdo = new PDO(DSN, USERNAME, PASSWORD);
@@ -44,7 +44,6 @@ try {
     header('Content-Type: text/plain; charset=UTF-8', true, 500);
     exit($e->getMessage());
 }
-var_dump($sql);
 
 
 // sidemenu用
