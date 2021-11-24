@@ -19,7 +19,7 @@
             <li class="topic_item">
                 <a href="./article.php?id=<?= $item->id ?>">
                     <p class="title"><?= $item->title ?></p>
-                    <p class="date"><?= $item->created_at ?></p>
+                    <p class="date"><?= $item->getCreatedAt() ?></p>
                 </a>
             </li>
         <?php endforeach; ?>

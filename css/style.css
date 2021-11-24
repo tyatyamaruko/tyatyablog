@@ -823,6 +823,9 @@ main nav h5.g-nav__header {
   margin-top: 50px;
   margin-left: 20px;
 }
+main nav ul.topic li p {
+  line-height: 1.2;
+}
 main nav ul.topic li h5 {
   font-size: 1.4rem;
   width: 100%;
