@@ -1,7 +1,7 @@
 <header>
     <h1>
         <a href="./index.php">
-            ちゃちゃの怠惰なブログ
+            ちゃちゃブログ
         </a>
     </h1>
 </header>

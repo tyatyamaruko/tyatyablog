@@ -32,7 +32,7 @@ main {
         .menu {
             padding-top: 40px;
             li {
-                font-size: 1.4rem;
+                font-size: $maxFontSize;
                 padding-left: 20px;
                 line-height: 2;
 
@@ -92,19 +92,19 @@ main {
 }
 
 h5 {
-    font-size: 1.6rem;
+    font-size: $maxFontSize;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: $maxFontSize;
 }
 
 h2 {
-    font-size: 1.8rem;
+    font-size: $maxFontSize;
 }
 
 p, a {
-    font-size: 1.3rem;
+    font-size: $lpFontSize;
     text-align: justify;
     text-justify: inter-ideograph;
 }
